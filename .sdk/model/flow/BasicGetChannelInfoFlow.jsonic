@@ -1,0 +1,32 @@
+# BasicGetChannelInfoFlow
+
+main: kit: flow: BasicGetChannelInfoFlow:
+{
+  entity: "get_channel_info",
+  kind: "basic",
+  name: "BasicGetChannelInfoFlow",
+  step: [
+    {
+      input: {
+        ref: "get_channel_info_ref01",
+        srcdatavar: "get_channel_info_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "get_channel_info01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-get_channel_info_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicGetChannelInfoFlow"
+}

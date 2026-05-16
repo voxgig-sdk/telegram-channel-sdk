@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://t.me/n9he1"
+      }
+      description: "This API allows interaction with Telegram channels, enabling users to view channel details, images, and descriptions. It helps manage subscriptions and engage with content in a seamless way."
+      servers: [
+        {
+          description: "Telegram Server"
+          url: "https://t.me"
+        }
+      ]
+      title: "Telegram Channel API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

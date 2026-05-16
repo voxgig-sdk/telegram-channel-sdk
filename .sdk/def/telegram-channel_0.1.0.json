@@ -1,0 +1,190 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Telegram Channel API",
+    "description": "This API allows interaction with Telegram channels, enabling users to view channel details, images, and descriptions. It helps manage subscriptions and engage with content in a seamless way.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://t.me/n9he1"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://t.me",
+      "description": "Telegram Server"
+    }
+  ],
+  "paths": {
+    "/{channelUsername}": {
+      "get": {
+        "summary": "Get channel information",
+        "description": "Retrieves information about a Telegram channel including details, images, descriptions, and subscriber count",
+        "operationId": "getChannelInfo",
+        "tags": [
+          "Channel"
+        ],
+        "parameters": [
+          {
+            "name": "channelUsername",
+            "in": "path",
+            "description": "The username of the Telegram channel (without @)",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "n9he1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with channel information",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "description": "HTML page containing channel information"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "username": {
+                      "type": "string",
+                      "description": "Channel username",
+                      "example": "n9he1"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "Channel title",
+                      "example": "» مُـنذ 25 يَنـايِر \"🪐♥„"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Channel description",
+                      "example": "مُجرد زاوية أخرى من عالمي, أدون فيها ما لا يصلح للضجيج 🤍"
+                    },
+                    "subscribers": {
+                      "type": "integer",
+                      "description": "Number of channel subscribers",
+                      "example": 12177
+                    },
+                    "image": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "URL to the channel profile image"
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "Full URL to the channel",
+                      "example": "https://t.me/n9he1"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid channel username",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Invalid channel username"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Channel not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Channel not found"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Rate limit exceeded"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ChannelInfo": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "Channel username"
+          },
+          "title": {
+            "type": "string",
+            "description": "Channel title"
+          },
+          "description": {
+            "type": "string",
+            "description": "Channel description"
+          },
+          "subscribers": {
+            "type": "integer",
+            "description": "Number of channel subscribers"
+          },
+          "image": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the channel profile image"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Full URL to the channel"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Channel",
+      "description": "Operations related to Telegram channel information"
+    }
+  ]
+}

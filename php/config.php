@@ -1,0 +1,139 @@
+<?php
+declare(strict_types=1);
+
+// TelegramChannel SDK configuration
+
+class TelegramChannelConfig
+{
+    public static function make_config(): array
+    {
+        return [
+            "main" => [
+                "name" => "TelegramChannel",
+            ],
+            "feature" => [
+                "test" => [
+          'options' => [
+            'active' => false,
+          ],
+        ],
+            ],
+            "options" => [
+                "base" => "https://t.me",
+                "auth" => [
+                    "prefix" => "Bearer",
+                ],
+                "headers" => [
+          'content-type' => 'application/json',
+        ],
+                "entity" => [
+                    "get_channel_info" => [],
+                ],
+            ],
+            "entity" => [
+        'get_channel_info' => [
+          'fields' => [
+            [
+              'name' => 'description',
+              'req' => false,
+              'type' => '`$STRING`',
+              'active' => true,
+              'index$' => 0,
+            ],
+            [
+              'name' => 'image',
+              'req' => false,
+              'type' => '`$STRING`',
+              'active' => true,
+              'index$' => 1,
+            ],
+            [
+              'name' => 'subscriber',
+              'req' => false,
+              'type' => '`$INTEGER`',
+              'active' => true,
+              'index$' => 2,
+            ],
+            [
+              'name' => 'title',
+              'req' => false,
+              'type' => '`$STRING`',
+              'active' => true,
+              'index$' => 3,
+            ],
+            [
+              'name' => 'url',
+              'req' => false,
+              'type' => '`$STRING`',
+              'active' => true,
+              'index$' => 4,
+            ],
+            [
+              'name' => 'username',
+              'req' => false,
+              'type' => '`$STRING`',
+              'active' => true,
+              'index$' => 5,
+            ],
+          ],
+          'name' => 'get_channel_info',
+          'op' => [
+            'load' => [
+              'name' => 'load',
+              'points' => [
+                [
+                  'args' => [
+                    'params' => [
+                      [
+                        'example' => 'n9he1',
+                        'kind' => 'param',
+                        'name' => 'id',
+                        'orig' => 'channel_username',
+                        'reqd' => true,
+                        'type' => '`$STRING`',
+                        'active' => true,
+                      ],
+                    ],
+                  ],
+                  'method' => 'GET',
+                  'orig' => '/{channelUsername}',
+                  'parts' => [
+                    '{id}',
+                  ],
+                  'rename' => [
+                    'param' => [
+                      'channelUsername' => 'id',
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'id',
+                    ],
+                  ],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'active' => true,
+                  'index$' => 0,
+                ],
+              ],
+              'input' => 'data',
+              'key$' => 'load',
+            ],
+          ],
+          'relations' => [
+            'ancestors' => [],
+          ],
+        ],
+      ],
+        ];
+    }
+
+
+    public static function make_feature(string $name)
+    {
+        require_once __DIR__ . '/features.php';
+        return TelegramChannelFeatures::make_feature($name);
+    }
+}
