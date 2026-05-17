@@ -1,10 +1,10 @@
 package voxgigtelegramchannelsdk
 
 import (
-	"github.com/voxgig-sdk/telegram-channel-sdk/core"
-	"github.com/voxgig-sdk/telegram-channel-sdk/entity"
-	"github.com/voxgig-sdk/telegram-channel-sdk/feature"
-	_ "github.com/voxgig-sdk/telegram-channel-sdk/utility"
+	"github.com/voxgig-sdk/telegram-channel-sdk/go/core"
+	"github.com/voxgig-sdk/telegram-channel-sdk/go/entity"
+	"github.com/voxgig-sdk/telegram-channel-sdk/go/feature"
+	_ "github.com/voxgig-sdk/telegram-channel-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

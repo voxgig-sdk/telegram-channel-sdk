@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/telegram-channel-sdk/core"
+	"github.com/voxgig-sdk/telegram-channel-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/telegram-channel-sdk/go/utility/struct"
 )
 
 type GetChannelInfoEntity struct {

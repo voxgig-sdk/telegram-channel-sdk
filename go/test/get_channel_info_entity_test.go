@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/telegram-channel-sdk"
-	"github.com/voxgig-sdk/telegram-channel-sdk/core"
+	sdk "github.com/voxgig-sdk/telegram-channel-sdk/go"
+	"github.com/voxgig-sdk/telegram-channel-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/telegram-channel-sdk/go/utility/struct"
 )
 
 func TestGetChannelInfoEntity(t *testing.T) {

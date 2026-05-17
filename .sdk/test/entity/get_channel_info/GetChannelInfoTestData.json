@@ -7,7 +7,8 @@
         "subscriber": "s3e",
         "title": "s3f",
         "url": "s40",
-        "username": "s41"
+        "username": "s41",
+        "id": "GET_CHANNEL_INFO00"
       },
       "GET_CHANNEL_INFO01": {
         "description": "s78",
@@ -15,7 +16,8 @@
         "subscriber": "s7a",
         "title": "s7b",
         "url": "s7c",
-        "username": "s7d"
+        "username": "s7d",
+        "id": "GET_CHANNEL_INFO01"
       },
       "GET_CHANNEL_INFO02": {
         "description": "sb4",
@@ -23,7 +25,8 @@
         "subscriber": "sb6",
         "title": "sb7",
         "url": "sb8",
-        "username": "sb9"
+        "username": "sb9",
+        "id": "GET_CHANNEL_INFO02"
       }
     }
   },

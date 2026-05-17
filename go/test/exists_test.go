@@ -3,7 +3,7 @@ package sdktest
 import (
 	"testing"
 
-	sdk "github.com/voxgig-sdk/telegram-channel-sdk"
+	sdk "github.com/voxgig-sdk/telegram-channel-sdk/go"
 )
 
 func TestExists(t *testing.T) {

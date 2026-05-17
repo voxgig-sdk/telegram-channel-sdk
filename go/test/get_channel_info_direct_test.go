@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/telegram-channel-sdk"
-	"github.com/voxgig-sdk/telegram-channel-sdk/core"
+	sdk "github.com/voxgig-sdk/telegram-channel-sdk/go"
+	"github.com/voxgig-sdk/telegram-channel-sdk/go/core"
 )
 
 func TestGetChannelInfoDirect(t *testing.T) {
