@@ -15,9 +15,6 @@ module TelegramChannelConfig
       },
       "options" => {
         "base" => "https://t.me",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },

@@ -66,14 +66,12 @@ def _get_channel_info_direct_setup(mockres):
     env = runner.env_override({
         "TELEGRAMCHANNEL_TEST_GET_CHANNEL_INFO_ENTID": {},
         "TELEGRAMCHANNEL_TEST_LIVE": "FALSE",
-        "TELEGRAMCHANNEL_APIKEY": "NONE",
     })
 
     live = env.get("TELEGRAMCHANNEL_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("TELEGRAMCHANNEL_APIKEY"),
         }
         client = TelegramChannelSDK(merged_opts)
         return {

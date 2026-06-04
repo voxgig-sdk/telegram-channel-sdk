@@ -85,7 +85,6 @@ function get_channel_info_basic_setup($extra)
         "TELEGRAMCHANNEL_TEST_GET_CHANNEL_INFO_ENTID" => $idmap,
         "TELEGRAMCHANNEL_TEST_LIVE" => "FALSE",
         "TELEGRAMCHANNEL_TEST_EXPLAIN" => "FALSE",
-        "TELEGRAMCHANNEL_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +96,6 @@ function get_channel_info_basic_setup($extra)
     if ($env["TELEGRAMCHANNEL_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["TELEGRAMCHANNEL_APIKEY"],
             ],
             $extra ?? [],
         ]);
