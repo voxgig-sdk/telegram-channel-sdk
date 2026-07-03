@@ -1,19 +1,8 @@
 # TelegramChannel SDK
 
-Look up public Telegram channel details and preview images via t.me URLs
+Telegram Channel API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Telegram Channel API
-
-This SDK wraps `https://t.me`, the public-facing web surface for [Telegram](https://telegram.org/) channels, groups, and users. Each `t.me/<name>` URL renders a lightweight preview page for the corresponding Telegram resource, which is what this SDK reads from.
-
-What you get from the API:
-
-- Basic public metadata for a Telegram channel addressed by its username
-- Channel preview imagery exposed on the `t.me` preview page
-
-Telegram itself is operated by [Telegram FZ-LLC / Telegram Messenger Inc.](https://telegram.org/). The `t.me` previews are public and require no authentication, but they only surface information that the channel owner has chosen to make public. For programmatic access to Telegram's full feature set (sending messages, joining channels, reading history) you generally need the official [Telegram Bot API](https://core.telegram.org/bots/api) or [MTProto client API](https://core.telegram.org/api).
 
 ## Try it
 
@@ -47,27 +36,31 @@ gem install telegram-channel-sdk
 luarocks install telegram-channel-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { TelegramChannelSDK } from 'telegram-channel'
 
-const client = new TelegramChannelSDK({})
+const client = new TelegramChannelSDK({
+  apikey: process.env.TELEGRAM-CHANNEL_APIKEY,
+})
 
+// Load getchannelinfo data
+const getchannelinfo = await client.GetChannelInfo().load({})
+console.log(getchannelinfo.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -97,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **GetChannelInfo** | Public-channel lookup resource that returns the basic profile information and preview image surfaced on a channel's `t.me/<username>` page. | `/{channelUsername}` |
+| **GetChannelInfo** |  | `/{channelUsername}` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -107,15 +100,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from telegramchannel_sdk import TelegramChannelSDK
 
-client = TelegramChannelSDK({})
+client = TelegramChannelSDK({
+    "apikey": os.environ.get("TELEGRAM-CHANNEL_APIKEY"),
+})
 
 
 # Load a specific getchannelinfo
-getchannelinfo, err = client.GetChannelInfo(None).load(
-    {"id": "example_id"}, None
-)
+getchannelinfo, err = client.GetChannelInfo().load({"id": "example_id"})
+print(getchannelinfo)
 ```
 
 ### PHP
@@ -124,13 +119,14 @@ getchannelinfo, err = client.GetChannelInfo(None).load(
 <?php
 require_once 'telegramchannel_sdk.php';
 
-$client = new TelegramChannelSDK([]);
+$client = new TelegramChannelSDK([
+    "apikey" => getenv("TELEGRAM-CHANNEL_APIKEY"),
+]);
 
 
 // Load a specific getchannelinfo
-[$getchannelinfo, $err] = $client->GetChannelInfo(null)->load(
-    ["id" => "example_id"], null
-);
+[$getchannelinfo, $err] = $client->GetChannelInfo()->load(["id" => "example_id"]);
+print_r($getchannelinfo);
 ```
 
 ### Golang
@@ -138,8 +134,13 @@ $client = new TelegramChannelSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/telegram-channel-sdk/go"
 
-client := sdk.NewTelegramChannelSDK(map[string]any{})
+client := sdk.NewTelegramChannelSDK(map[string]any{
+    "apikey": os.Getenv("TELEGRAM-CHANNEL_APIKEY"),
+})
 
+// Load getchannelinfo data
+getchannelinfo, err := client.GetChannelInfo(nil).Load(map[string]any{}, nil)
+fmt.Println(getchannelinfo)
 ```
 
 ### Ruby
@@ -147,13 +148,14 @@ client := sdk.NewTelegramChannelSDK(map[string]any{})
 ```ruby
 require_relative "TelegramChannel_sdk"
 
-client = TelegramChannelSDK.new({})
+client = TelegramChannelSDK.new({
+  "apikey" => ENV["TELEGRAM-CHANNEL_APIKEY"],
+})
 
 
 # Load a specific getchannelinfo
-getchannelinfo, err = client.GetChannelInfo(nil).load(
-  { "id" => "example_id" }, nil
-)
+getchannelinfo, err = client.GetChannelInfo().load({ "id" => "example_id" })
+puts getchannelinfo
 ```
 
 ### Lua
@@ -161,13 +163,14 @@ getchannelinfo, err = client.GetChannelInfo(nil).load(
 ```lua
 local sdk = require("telegram-channel_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("TELEGRAM-CHANNEL_APIKEY"),
+})
 
 
 -- Load a specific getchannelinfo
-local getchannelinfo, err = client:GetChannelInfo(nil):load(
-  { id = "example_id" }, nil
-)
+local getchannelinfo, err = client:GetChannelInfo():load({ id = "example_id" })
+print(getchannelinfo)
 ```
 
 ## Unit testing in offline mode
@@ -186,25 +189,21 @@ const result = await client.GetChannelInfo().load({ id: 'test01' })
 ### Python
 
 ```python
-client = TelegramChannelSDK.test(None, None)
-result, err = client.GetChannelInfo(None).load(
-    {"id": "test01"}, None
-)
+client = TelegramChannelSDK.test()
+result, err = client.GetChannelInfo().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = TelegramChannelSDK::test(null, null);
-[$result, $err] = $client->GetChannelInfo(null)->load(
-    ["id" => "test01"], null
-);
+$client = TelegramChannelSDK::test();
+[$result, $err] = $client->GetChannelInfo()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.GetChannelInfo(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -213,19 +212,15 @@ result, err := client.GetChannelInfo(nil).Load(
 ### Ruby
 
 ```ruby
-client = TelegramChannelSDK.test(nil, nil)
-result, err = client.GetChannelInfo(nil).load(
-  { "id" => "test01" }, nil
-)
+client = TelegramChannelSDK.test
+result, err = client.GetChannelInfo().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:GetChannelInfo(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:GetChannelInfo():load({ id = "test01" })
 ```
 
 ## How it works
@@ -329,11 +324,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Telegram Channel API
-
-- Upstream: [https://t.me](https://t.me)
-- API docs: [https://core.telegram.org/api](https://core.telegram.org/api)
 
 ---
 

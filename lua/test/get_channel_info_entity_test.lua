@@ -91,6 +91,7 @@ function get_channel_info_basic_setup(extra)
     ["TELEGRAMCHANNEL_TEST_GET_CHANNEL_INFO_ENTID"] = idmap,
     ["TELEGRAMCHANNEL_TEST_LIVE"] = "FALSE",
     ["TELEGRAMCHANNEL_TEST_EXPLAIN"] = "FALSE",
+    ["TELEGRAMCHANNEL_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -102,6 +103,7 @@ function get_channel_info_basic_setup(extra)
   if env["TELEGRAMCHANNEL_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["TELEGRAMCHANNEL_APIKEY"],
       },
       extra or {},
     })

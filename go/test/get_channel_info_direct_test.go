@@ -110,12 +110,14 @@ func get_channel_infoDirectSetup(mockres any) *get_channel_infoDirectSetupResult
 	env := envOverride(map[string]any{
 		"TELEGRAMCHANNEL_TEST_GET_CHANNEL_INFO_ENTID": map[string]any{},
 		"TELEGRAMCHANNEL_TEST_LIVE":    "FALSE",
+		"TELEGRAMCHANNEL_APIKEY":       "NONE",
 	})
 
 	live := env["TELEGRAMCHANNEL_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["TELEGRAMCHANNEL_APIKEY"],
 		}
 		client := sdk.NewTelegramChannelSDK(mergedOpts)
 

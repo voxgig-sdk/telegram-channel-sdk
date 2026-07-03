@@ -16,21 +16,7 @@ main: {
       ]
       title: "Telegram Channel API"
       version: "1.0.0"
-      tagline: "Look up public Telegram channel details and preview images via t.me URLs"
-      homepage: "https://t.me"
-      docs_url: "https://core.telegram.org/api"
-      about_md: `This SDK wraps \`https://t.me\`, the public-facing web surface for [Telegram](https://telegram.org/) channels, groups, and users. Each \`t.me/<name>\` URL renders a lightweight preview page for the corresponding Telegram resource, which is what this SDK reads from.
-
-What you get from the API:
-
-- Basic public metadata for a Telegram channel addressed by its username
-- Channel preview imagery exposed on the \`t.me\` preview page
-
-Telegram itself is operated by [Telegram FZ-LLC / Telegram Messenger Inc.](https://telegram.org/). The \`t.me\` previews are public and require no authentication, but they only surface information that the channel owner has chosen to make public. For programmatic access to Telegram's full feature set (sending messages, joining channels, reading history) you generally need the official [Telegram Bot API](https://core.telegram.org/bots/api) or [MTProto client API](https://core.telegram.org/api).`
-      entity_desc: {
-        get_channel_info: "Public-channel lookup resource that returns the basic profile information and preview image surfaced on a channel's `t.me/<username>` page."
-      }
-      auth: false
     }
   }
 }
+

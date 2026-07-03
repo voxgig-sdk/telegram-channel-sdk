@@ -117,6 +117,7 @@ func get_channel_infoBasicSetup(extra map[string]any) *entityTestSetup {
 		"TELEGRAMCHANNEL_TEST_GET_CHANNEL_INFO_ENTID": idmap,
 		"TELEGRAMCHANNEL_TEST_LIVE":      "FALSE",
 		"TELEGRAMCHANNEL_TEST_EXPLAIN":   "FALSE",
+		"TELEGRAMCHANNEL_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["TELEGRAMCHANNEL_TEST_GET_CHANNEL_INFO_ENTID"])
@@ -127,6 +128,7 @@ func get_channel_infoBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["TELEGRAMCHANNEL_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["TELEGRAMCHANNEL_APIKEY"],
 			},
 			extra,
 		})

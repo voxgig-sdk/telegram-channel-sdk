@@ -111,6 +111,7 @@ function basicSetup(extra?: any) {
     'TELEGRAM_CHANNEL_TEST_GET_CHANNEL_INFO_ENTID': idmap,
     'TELEGRAM_CHANNEL_TEST_LIVE': 'FALSE',
     'TELEGRAM_CHANNEL_TEST_EXPLAIN': 'FALSE',
+    'TELEGRAM_CHANNEL_APIKEY': 'NONE',
   })
 
   idmap = env['TELEGRAM_CHANNEL_TEST_GET_CHANNEL_INFO_ENTID']
@@ -120,6 +121,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new TelegramChannelSDK(merge([
       {
+        apikey: env.TELEGRAM_CHANNEL_APIKEY,
       },
       extra
     ]))

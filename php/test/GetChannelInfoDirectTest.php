@@ -75,12 +75,14 @@ function get_channel_info_direct_setup($mockres)
     $env = Runner::env_override([
         "TELEGRAMCHANNEL_TEST_GET_CHANNEL_INFO_ENTID" => [],
         "TELEGRAMCHANNEL_TEST_LIVE" => "FALSE",
+        "TELEGRAMCHANNEL_APIKEY" => "NONE",
     ]);
 
     $live = $env["TELEGRAMCHANNEL_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
+            "apikey" => $env["TELEGRAMCHANNEL_APIKEY"],
         ];
         $client = new TelegramChannelSDK($merged_opts);
         return [
