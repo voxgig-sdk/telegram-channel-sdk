@@ -10,7 +10,7 @@ The Lua SDK for the TelegramChannel API — an entity-oriented client using Lua 
 
 ## Install
 ```bash
-luarocks install telegram-channel-sdk
+luarocks install voxgig-sdk-telegram-channel
 ```
 
 If the module is not yet published, add the source directory to

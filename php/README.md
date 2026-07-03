@@ -10,7 +10,7 @@ The PHP SDK for the TelegramChannel API — an entity-oriented client using PHP 
 
 ## Install
 ```bash
-composer require voxgig/telegram-channel-sdk
+composer require voxgig-sdk/telegram-channel
 ```
 
 

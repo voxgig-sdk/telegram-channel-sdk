@@ -10,13 +10,13 @@ The Ruby SDK for the TelegramChannel API — an entity-oriented client using idi
 
 ## Install
 ```bash
-gem install telegram-channel-sdk
+gem install voxgig-sdk-telegram-channel
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "telegram-channel-sdk"
+gem "voxgig-sdk-telegram-channel"
 ```
 
 Then run:

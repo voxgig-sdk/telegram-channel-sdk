@@ -10,7 +10,7 @@ The Python SDK for the TelegramChannel API — an entity-oriented client followi
 
 ## Install
 ```bash
-pip install telegram-channel-sdk
+pip install voxgig-sdk-telegram-channel
 ```
 
 Or install from source:

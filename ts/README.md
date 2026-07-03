@@ -10,7 +10,7 @@ The TypeScript SDK for the TelegramChannel API — a type-safe, entity-oriented 
 
 ## Install
 ```bash
-npm install telegram-channel
+npm install @voxgig-sdk/telegram-channel
 ```
 ## Tutorial: your first API call
 
