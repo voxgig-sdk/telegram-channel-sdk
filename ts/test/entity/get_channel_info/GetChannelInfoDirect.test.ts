@@ -79,14 +79,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'TELEGRAMCHANNEL_TEST_GET_CHANNEL_INFO_ENTID': {},
     'TELEGRAMCHANNEL_TEST_LIVE': 'FALSE',
-    'TELEGRAMCHANNEL_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.TELEGRAMCHANNEL_TEST_LIVE
 
   if (live) {
     const client = new TelegramChannelSDK({
-      apikey: env.TELEGRAMCHANNEL_APIKEY,
     })
 
     let idmap: any = env['TELEGRAMCHANNEL_TEST_GET_CHANNEL_INFO_ENTID']

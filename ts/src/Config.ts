@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'https://t.me',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },
@@ -118,7 +114,8 @@ class Config {
                     "name": "id",
                     "orig": "channel_username",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },

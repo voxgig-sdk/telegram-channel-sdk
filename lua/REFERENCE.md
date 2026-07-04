@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -84,7 +83,7 @@ same parameters as `direct()`.
 ## GetChannelInfoEntity
 
 ```lua
-local get_channel_info = client:GetChannelInfo(nil)
+local get_channel_info = client:get_channel_info(nil)
 ```
 
 ### Fields
@@ -105,7 +104,7 @@ local get_channel_info = client:GetChannelInfo(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:GetChannelInfo():load({ id = "get_channel_info_id" })
+local result, err = client:get_channel_info():load({ id = "get_channel_info_id" })
 ```
 
 ### Common Methods

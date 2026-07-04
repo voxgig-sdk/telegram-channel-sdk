@@ -45,6 +45,7 @@ class GetChannelInfoEntity
     end
   end
 
+  # @return [GetChannelInfo, Hash] the current GetChannelInfo data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class GetChannelInfoEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of GetChannelInfo fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single GetChannelInfo.
+  #
+  # @param reqmatch [GetChannelInfoLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [GetChannelInfo, Hash] the loaded GetChannelInfo; raises TelegramChannelError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

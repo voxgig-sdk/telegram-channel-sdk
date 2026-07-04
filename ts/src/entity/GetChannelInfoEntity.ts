@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  GetChannelInfo,
+  GetChannelInfoLoadMatch,
+} from '../TelegramChannelTypes'
 
 // TODO: needs Entity superclass
-class GetChannelInfoEntity extends TelegramChannelEntityBase {
+class GetChannelInfoEntity extends TelegramChannelEntityBase<GetChannelInfo> {
 
   constructor(client: TelegramChannelSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class GetChannelInfoEntity extends TelegramChannelEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: GetChannelInfoLoadMatch, ctrl?: Control): Promise<GetChannelInfo> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class GetChannelInfoEntity extends TelegramChannelEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<GetChannelInfo> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

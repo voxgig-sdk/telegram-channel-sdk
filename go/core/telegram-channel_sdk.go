@@ -245,6 +245,9 @@ func (sdk *TelegramChannelSDK) Direct(fetchargs map[string]any) (map[string]any,
 }
 
 
+// GetChannelInfo returns a GetChannelInfo entity bound to this client.
+// Idiomatic usage: client.GetChannelInfo(nil).List(nil, nil) or
+// client.GetChannelInfo(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *TelegramChannelSDK) GetChannelInfo(data map[string]any) TelegramChannelEntity {
 	return NewGetChannelInfoEntityFunc(sdk, data)
 }

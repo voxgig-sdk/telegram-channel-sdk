@@ -20,9 +20,6 @@ class TelegramChannelConfig
             ],
             "options" => [
                 "base" => "https://t.me",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],
@@ -94,6 +91,7 @@ class TelegramChannelConfig
                         'orig' => 'channel_username',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                   ],

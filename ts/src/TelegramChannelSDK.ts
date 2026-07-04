@@ -2,6 +2,8 @@
 
 import { GetChannelInfoEntity } from './entity/GetChannelInfoEntity'
 
+export type * from './TelegramChannelTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class TelegramChannelSDK {
 
 
 
+  _get_channel_info?: GetChannelInfoEntity
+
+  // Idiomatic facade: `client.get_channel_info.list()` / `client.get_channel_info.load({ id })`.
+  get get_channel_info(): GetChannelInfoEntity {
+    return (this._get_channel_info ??= new GetChannelInfoEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.get_channel_info` instead. */
   GetChannelInfo(data?: any) {
     const self = this
     return new GetChannelInfoEntity(self,data)

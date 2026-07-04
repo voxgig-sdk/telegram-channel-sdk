@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -110,7 +109,7 @@ Alias for `TelegramChannelSDK.test()`.
 ## GetChannelInfoEntity
 
 ```ts
-const get_channel_info = client.GetChannelInfo()
+const get_channel_info = client.get_channel_info
 ```
 
 ### Fields
@@ -131,7 +130,7 @@ const get_channel_info = client.GetChannelInfo()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.GetChannelInfo().load({ id: 'get_channel_info_id' })
+const result = await client.get_channel_info.load({ id: 'get_channel_info_id' })
 ```
 
 ### Common Methods

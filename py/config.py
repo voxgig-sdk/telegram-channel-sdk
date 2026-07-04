@@ -15,9 +15,6 @@ def make_config():
         },
         "options": {
             "base": "https://t.me",
-            "auth": {
-                "prefix": "Bearer",
-            },
             "headers": {
         "content-type": "application/json",
       },
@@ -89,6 +86,7 @@ def make_config():
                       "orig": "channel_username",
                       "reqd": True,
                       "type": "`$STRING`",
+                      "index$": 0,
                     },
                   ],
                 },
