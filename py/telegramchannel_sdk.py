@@ -220,25 +220,15 @@ class TelegramChannelSDK:
         }
 
 
-    @property
-    def get_channel_info(self):
-        """Idiomatic facade: client.get_channel_info.list() / client.get_channel_info.load({"id": ...})."""
-        from entity.get_channel_info_entity import GetChannelInfoEntity
-        cached = getattr(self, "_get_channel_info", None)
-        if cached is None:
-            cached = GetChannelInfoEntity(self, None)
-            self._get_channel_info = cached
-        return cached
-
-    def GetChannelInfo(self, data=None):
-        # Deprecated: use client.get_channel_info instead.
+    def GetChannelInfo(self, data=None) -> "GetChannelInfoEntity":
+        """Entity factory: client.GetChannelInfo().list({}) / client.GetChannelInfo().load({"id": ...})."""
         from entity.get_channel_info_entity import GetChannelInfoEntity
         return GetChannelInfoEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "TelegramChannelSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class TelegramChannelSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.get_channel_info_entity import GetChannelInfoEntity

@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## GetChannelInfoEntity
 
 ```python
-get_channel_info = client.get_channel_info
+get_channel_info = client.GetChannelInfo()
 ```
 
 ### Fields
@@ -101,7 +101,7 @@ get_channel_info = client.get_channel_info
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.get_channel_info.load({"id": "get_channel_info_id"})
+result = client.GetChannelInfo().load({"id": "get_channel_info_id"})
 ```
 
 ### Common Methods

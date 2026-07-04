@@ -233,10 +233,10 @@ class TelegramChannelSDK
 
     private $_get_channel_info = null;
 
-    // Idiomatic facade: $client->get_channel_info()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias GetChannelInfo() (PHP method
-    // names are case-insensitive).
-    public function get_channel_info($data = null)
+    // Canonical facade: $client->GetChannelInfo()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->get_channel_info()
+    // resolves here too.
+    public function GetChannelInfo($data = null)
     {
         require_once __DIR__ . '/entity/get_channel_info_entity.php';
         if ($data === null) {

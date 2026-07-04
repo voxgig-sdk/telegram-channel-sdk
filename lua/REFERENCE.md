@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## GetChannelInfoEntity
 
 ```lua
-local get_channel_info = client:get_channel_info(nil)
+local get_channel_info = client:GetChannelInfo(nil)
 ```
 
 ### Fields
@@ -104,7 +104,7 @@ local get_channel_info = client:get_channel_info(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:get_channel_info():load({ id = "get_channel_info_id" })
+local result, err = client:GetChannelInfo():load({ id = "get_channel_info_id" })
 ```
 
 ### Common Methods

@@ -33,9 +33,10 @@ $client = new TelegramChannelSDK();
 
 ```php
 try {
-    $result = $client->getchannelinfo()->load(["id" => "example_id"]);
-    print_r($result);
-} catch (\Exception $err) {
+    // load() returns the bare GetChannelInfo record (throws on error).
+    $getchannelinfo = $client->GetChannelInfo()->load(["id" => "example_id"]);
+    print_r($getchannelinfo);
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -81,13 +82,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = TelegramChannelSDK::test();
+$client = TelegramChannelSDK::test([
+    "entity" => ["getchannelinfo" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->getchannelinfo()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$getchannelinfo = $client->GetChannelInfo()->load(["id" => "test01"]);
+print_r($getchannelinfo);
 ```
 
 ### Use a custom fetch function
@@ -228,7 +233,7 @@ API path: `/{channelUsername}`
 
 ### GetChannelInfo
 
-Create an instance: `const get_channel_info = client.get_channel_info`
+Create an instance: `$get_channel_info = $client->GetChannelInfo();`
 
 #### Operations
 
@@ -249,8 +254,9 @@ Create an instance: `const get_channel_info = client.get_channel_info`
 
 #### Example: Load
 
-```ts
-const get_channel_info = await client.get_channel_info.load({ id: 'get_channel_info_id' })
+```php
+// load() returns the bare GetChannelInfo record (throws on error).
+$get_channel_info = $client->GetChannelInfo()->load(["id" => "get_channel_info_id"]);
 ```
 
 
@@ -325,7 +331,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$getchannelinfo = $client->getchannelinfo();
+$getchannelinfo = $client->GetChannelInfo();
 $getchannelinfo->load(["id" => "example_id"]);
 
 // $getchannelinfo->dataGet() now returns the loaded getchannelinfo data

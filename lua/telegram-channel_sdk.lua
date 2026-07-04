@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:get_channel_info():list() / client:get_channel_info():load({ id = ... })
-function TelegramChannelSDK:get_channel_info(data)
+-- Idiomatic facade: client:GetChannelInfo():list() / client:GetChannelInfo():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function TelegramChannelSDK:GetChannelInfo(data)
   local EntityMod = require("entity.get_channel_info_entity")
   if data == nil then
     if self._get_channel_info == nil then
@@ -253,12 +254,6 @@ function TelegramChannelSDK:get_channel_info(data)
     end
     return self._get_channel_info
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:get_channel_info() instead.
-function TelegramChannelSDK:GetChannelInfo(data)
-  local EntityMod = require("entity.get_channel_info_entity")
   return EntityMod.new(self, data)
 end
 

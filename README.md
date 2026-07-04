@@ -26,9 +26,9 @@ import { TelegramChannelSDK } from '@voxgig-sdk/telegram-channel'
 
 const client = new TelegramChannelSDK()
 
-// Load getchannelinfo data
-const getchannelinfo = await client.getchannelinfo.load({})
-console.log(getchannelinfo.data)
+// Load getchannelinfo data (returns a GetChannelInfo)
+const getchannelinfo = await client.GetChannelInfo().load()
+console.log(getchannelinfo)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,8 +84,8 @@ from telegramchannel_sdk import TelegramChannelSDK
 client = TelegramChannelSDK()
 
 
-# Load a specific getchannelinfo
-getchannelinfo = client.getchannelinfo.load({"id": "example_id"})
+# Load a specific getchannelinfo (returns the record, raises on error)
+getchannelinfo = client.GetChannelInfo().load({"id": "example_id"})
 print(getchannelinfo)
 ```
 
@@ -98,8 +98,8 @@ require_once 'telegramchannel_sdk.php';
 $client = new TelegramChannelSDK();
 
 
-// Load a specific getchannelinfo
-$getchannelinfo = $client->getchannelinfo()->load(["id" => "example_id"]);
+// Load a specific getchannelinfo (returns the bare record; throws on error)
+$getchannelinfo = $client->GetChannelInfo()->load(["id" => "example_id"]);
 print_r($getchannelinfo);
 ```
 
@@ -123,8 +123,8 @@ require_relative "TelegramChannel_sdk"
 client = TelegramChannelSDK.new
 
 
-# Load a specific getchannelinfo
-getchannelinfo = client.getchannelinfo.load({ "id" => "example_id" })
+# Load a specific getchannelinfo (returns the bare record; raises on error)
+getchannelinfo = client.GetChannelInfo.load({ "id" => "example_id" })
 puts getchannelinfo
 ```
 
@@ -137,7 +137,7 @@ local client = sdk.new()
 
 
 -- Load a specific getchannelinfo
-local getchannelinfo, err = client:getchannelinfo():load({ id = "example_id" })
+local getchannelinfo, err = client:GetChannelInfo():load({ id = "example_id" })
 print(getchannelinfo)
 ```
 
@@ -150,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = TelegramChannelSDK.test()
-const result = await client.getchannelinfo.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const getchannelinfo = await client.GetChannelInfo().load({ id: 'test01' })
+// getchannelinfo is a bare GetChannelInfo populated with mock data
+console.log(getchannelinfo)
 ```
 
 ### Python
 
 ```python
 client = TelegramChannelSDK.test()
-result = client.getchannelinfo.load({"id": "test01"})
+getchannelinfo = client.GetChannelInfo().load({"id": "test01"})
+print(getchannelinfo)
 ```
 
 ### PHP
 
 ```php
-$client = TelegramChannelSDK::test();
-$result = $client->getchannelinfo()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = TelegramChannelSDK::test([
+    "entity" => ["getchannelinfo" => ["test01" => ["id" => "test01"]]],
+]);
+$getchannelinfo = $client->GetChannelInfo()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -180,15 +185,18 @@ result, err := client.GetChannelInfo(nil).Load(
 ### Ruby
 
 ```ruby
-client = TelegramChannelSDK.test
-result = client.getchannelinfo.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = TelegramChannelSDK.test({
+  "entity" => { "getchannelinfo" => { "test01" => { "id" => "test01" } } },
+})
+getchannelinfo = client.GetChannelInfo.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:getchannelinfo():load({ id = "test01" })
+local result, err = client:GetChannelInfo():load({ id = "test01" })
 ```
 
 ## How it works
@@ -236,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

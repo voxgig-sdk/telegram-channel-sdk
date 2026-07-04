@@ -208,13 +208,7 @@ class TelegramChannelSDK
   end
 
 
-  # Idiomatic facade: client.get_channel_info.list / client.get_channel_info.load({ "id" => ... })
-  def get_channel_info
-    require_relative 'entity/get_channel_info_entity'
-    @get_channel_info ||= GetChannelInfoEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.get_channel_info instead.
+  # Canonical facade: client.GetChannelInfo.list / client.GetChannelInfo.load({ "id" => ... })
   def GetChannelInfo(data = nil)
     require_relative 'entity/get_channel_info_entity'
     GetChannelInfoEntity.new(self, data)

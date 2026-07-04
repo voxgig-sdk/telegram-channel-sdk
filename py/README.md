@@ -33,10 +33,12 @@ client = TelegramChannelSDK()
 
 ### 3. Load a getchannelinfo
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.getchannelinfo.load({"id": "example_id"})
-    print(result)
+    getchannelinfo = client.GetChannelInfo().load({"id": "example_id"})
+    print(getchannelinfo)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -84,8 +86,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = TelegramChannelSDK.test()
 
-result = client.getchannelinfo.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+getchannelinfo = client.GetChannelInfo().load({"id": "test01"})
+# getchannelinfo contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -223,7 +226,7 @@ API path: `/{channelUsername}`
 
 ### GetChannelInfo
 
-Create an instance: `const get_channel_info = client.get_channel_info`
+Create an instance: `get_channel_info = client.GetChannelInfo()`
 
 #### Operations
 
@@ -244,8 +247,8 @@ Create an instance: `const get_channel_info = client.get_channel_info`
 
 #### Example: Load
 
-```ts
-const get_channel_info = await client.get_channel_info.load({ id: 'get_channel_info_id' })
+```python
+get_channel_info = client.GetChannelInfo().load({"id": "get_channel_info_id"})
 ```
 
 
@@ -319,7 +322,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-getchannelinfo = client.getchannelinfo
+getchannelinfo = client.GetChannelInfo()
 getchannelinfo.load({"id": "example_id"})
 
 # getchannelinfo.data_get() now returns the loaded getchannelinfo data

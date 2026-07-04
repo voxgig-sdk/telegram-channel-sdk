@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## GetChannelInfoEntity
 
 ```php
-$get_channel_info = $client->get_channel_info();
+$get_channel_info = $client->GetChannelInfo();
 ```
 
 ### Fields
@@ -106,7 +106,7 @@ $get_channel_info = $client->get_channel_info();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->get_channel_info()->load(["id" => "get_channel_info_id"]);
+$result = $client->GetChannelInfo()->load(["id" => "get_channel_info_id"]);
 ```
 
 ### Common Methods

@@ -204,14 +204,7 @@ class TelegramChannelSDK {
 
 
 
-  _get_channel_info?: GetChannelInfoEntity
-
-  // Idiomatic facade: `client.get_channel_info.list()` / `client.get_channel_info.load({ id })`.
-  get get_channel_info(): GetChannelInfoEntity {
-    return (this._get_channel_info ??= new GetChannelInfoEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.get_channel_info` instead. */
+  // Entity access: `client.GetChannelInfo().list()` / `client.GetChannelInfo().load({ id })`.
   GetChannelInfo(data?: any) {
     const self = this
     return new GetChannelInfoEntity(self,data)

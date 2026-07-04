@@ -109,7 +109,7 @@ Alias for `TelegramChannelSDK.test()`.
 ## GetChannelInfoEntity
 
 ```ts
-const get_channel_info = client.get_channel_info
+const get_channel_info = client.GetChannelInfo()
 ```
 
 ### Fields
@@ -130,7 +130,7 @@ const get_channel_info = client.get_channel_info
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.get_channel_info.load({ id: 'get_channel_info_id' })
+const result = await client.GetChannelInfo().load({ id: 'get_channel_info_id' })
 ```
 
 ### Common Methods
