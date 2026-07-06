@@ -221,7 +221,7 @@ class TelegramChannelSDK:
 
 
     def GetChannelInfo(self, data=None) -> "GetChannelInfoEntity":
-        """Entity factory: client.GetChannelInfo().list({}) / client.GetChannelInfo().load({"id": ...})."""
+        """Entity factory: client.GetChannelInfo().list() / client.GetChannelInfo().load({"id": ...})."""
         from entity.get_channel_info_entity import GetChannelInfoEntity
         return GetChannelInfoEntity(self, data)
 

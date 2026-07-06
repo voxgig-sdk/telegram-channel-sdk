@@ -90,12 +90,12 @@ local get_channel_info = client:GetChannelInfo(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `image` | ``$STRING`` | No |  |
-| `subscriber` | ``$INTEGER`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `username` | ``$STRING`` | No |  |
+| `description` | `string` | No |  |
+| `image` | `string` | No |  |
+| `subscriber` | `number` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
+| `username` | `string` | No |  |
 
 ### Operations
 

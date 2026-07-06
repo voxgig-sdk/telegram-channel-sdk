@@ -8,7 +8,7 @@ Complete API reference for the TelegramChannel Python SDK.
 ### Constructor
 
 ```python
-from telegram-channel_sdk import TelegramChannelSDK
+from telegramchannel_sdk import TelegramChannelSDK
 
 client = TelegramChannelSDK(options)
 ```
@@ -87,12 +87,12 @@ get_channel_info = client.GetChannelInfo()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `image` | ``$STRING`` | No |  |
-| `subscriber` | ``$INTEGER`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `username` | ``$STRING`` | No |  |
+| `description` | `str` | No |  |
+| `image` | `str` | No |  |
+| `subscriber` | `int` | No |  |
+| `title` | `str` | No |  |
+| `url` | `str` | No |  |
+| `username` | `str` | No |  |
 
 ### Operations
 

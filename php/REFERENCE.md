@@ -8,7 +8,7 @@ Complete API reference for the TelegramChannel PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/telegram-channel_sdk.php';
+require_once __DIR__ . '/telegramchannel_sdk.php';
 
 $client = new TelegramChannelSDK($options);
 ```
@@ -45,11 +45,11 @@ $client = TelegramChannelSDK::test();
 
 Create a new `GetChannelInfoEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): TelegramChannelUtility`
 
 Return a copy of the SDK utility object.
 
@@ -92,12 +92,12 @@ $get_channel_info = $client->GetChannelInfo();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `image` | ``$STRING`` | No |  |
-| `subscriber` | ``$INTEGER`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `username` | ``$STRING`` | No |  |
+| `description` | `string` | No |  |
+| `image` | `string` | No |  |
+| `subscriber` | `int` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
+| `username` | `string` | No |  |
 
 ### Operations
 
@@ -111,19 +111,19 @@ $result = $client->GetChannelInfo()->load(["id" => "get_channel_info_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -132,7 +132,7 @@ Set the entity match criteria.
 Create a new `GetChannelInfoEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

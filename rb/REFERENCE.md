@@ -8,7 +8,7 @@ Complete API reference for the TelegramChannel Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'telegram-channel_sdk'
+require_relative 'TelegramChannel_sdk'
 
 client = TelegramChannelSDK.new(options)
 ```
@@ -93,12 +93,12 @@ get_channel_info = client.GetChannelInfo
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `image` | ``$STRING`` | No |  |
-| `subscriber` | ``$INTEGER`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `username` | ``$STRING`` | No |  |
+| `description` | `String` | No |  |
+| `image` | `String` | No |  |
+| `subscriber` | `Integer` | No |  |
+| `title` | `String` | No |  |
+| `url` | `String` | No |  |
+| `username` | `String` | No |  |
 
 ### Operations
 
