@@ -15,9 +15,9 @@ main: {
           url: "https://t.me"
         }
       ]
+      summary: "This API allows interaction with Telegram channels, enabling users to view channel details, images, and descriptions."
       title: "Telegram Channel API"
       version: "1.0.0"
+      website: "https://t.me"
     }
   }
-}
-

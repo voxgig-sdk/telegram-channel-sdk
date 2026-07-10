@@ -50,12 +50,12 @@ import (
 func main() {
     client := sdk.New()
 
-    // Load a single getchannelinfo — the value is the loaded record.
-    getchannelinfo, err := client.GetChannelInfo(nil).Load(map[string]any{"id": "example"}, nil)
+    // Load a single getChannelInfo — the value is the loaded record.
+    getChannelInfo, err := client.GetChannelInfo(nil).Load(map[string]any{"id": "example_id"}, nil)
     if err != nil {
         panic(err)
     }
-    fmt.Println(getchannelinfo)
+    fmt.Println(getChannelInfo)
 }
 ```
 
@@ -135,13 +135,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-getchannelinfo, err := client.GetChannelInfo(nil).Load(
+getChannelInfo, err := client.GetChannelInfo(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(getchannelinfo) // the returned mock data
+fmt.Println(getChannelInfo) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -245,9 +245,9 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    getchannelinfo, err := client.GetChannelInfo(nil).Load(map[string]any{"id": "example_id"}, nil)
+    getChannelInfo, err := client.GetChannelInfo(nil).Load(map[string]any{"id": "example_id"}, nil)
     if err != nil { /* handle */ }
-    // getchannelinfo is the returned record
+    // getChannelInfo is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -276,7 +276,7 @@ API path: `/{channelUsername}`
 
 ### GetChannelInfo
 
-Create an instance: `get_channel_info := client.GetChannelInfo(nil)`
+Create an instance: `getChannelInfo := client.GetChannelInfo(nil)`
 
 #### Operations
 
@@ -298,11 +298,11 @@ Create an instance: `get_channel_info := client.GetChannelInfo(nil)`
 #### Example: Load
 
 ```go
-get_channel_info, err := client.GetChannelInfo(nil).Load(map[string]any{"id": "get_channel_info_id"}, nil)
+getChannelInfo, err := client.GetChannelInfo(nil).Load(map[string]any{"id": "get_channel_info_id"}, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(get_channel_info) // the loaded record
+fmt.Println(getChannelInfo) // the loaded record
 ```
 
 

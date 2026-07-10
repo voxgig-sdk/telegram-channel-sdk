@@ -90,7 +90,8 @@ same parameters as `Direct()`.
 ## GetChannelInfoEntity
 
 ```go
-get_channel_info := client.GetChannelInfo(nil)
+getChannelInfo := client.GetChannelInfo(nil)
+fmt.Println(getChannelInfo.GetName()) // "get_channel_info"
 ```
 
 ### Fields
@@ -112,6 +113,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.GetChannelInfo(nil).Load(map[string]any{"id": "get_channel_info_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods

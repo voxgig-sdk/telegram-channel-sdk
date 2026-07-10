@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -247,14 +244,17 @@
           "url": "https://t.me/n9he1"
         },
         "description": "This API allows interaction with Telegram channels, enabling users to view channel details, images, and descriptions. It helps manage subscriptions and engage with content in a seamless way.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Telegram Server",
             "url": "https://t.me"
           }
         ],
+        "summary": "This API allows interaction with Telegram channels, enabling users to view channel details, images, and descriptions.",
         "title": "Telegram Channel API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://t.me"
       },
       "option": {},
       "target": {
@@ -307,6 +307,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -357,6 +360,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
