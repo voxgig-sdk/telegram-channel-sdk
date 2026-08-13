@@ -8,7 +8,7 @@
 export interface GetChannelInfo {
   description?: string
   image?: string
-  subscriber?: number
+  subscribers?: number
   title?: string
   url?: string
   username?: string

@@ -16,11 +16,11 @@
 import pytest
 
 from telegramchannel_sdk import TelegramChannelSDK
-from core.error import TelegramChannelError
-from core.result import TelegramChannelResult
-from core.response import TelegramChannelResponse
-from core.spec import TelegramChannelSpec
-from feature.base_feature import TelegramChannelBaseFeature
+from telegramchannel_sdk.core.error import TelegramChannelError
+from telegramchannel_sdk.core.result import TelegramChannelResult
+from telegramchannel_sdk.core.response import TelegramChannelResponse
+from telegramchannel_sdk.core.spec import TelegramChannelSpec
+from telegramchannel_sdk.feature.base_feature import TelegramChannelBaseFeature
 
 
 def _client():

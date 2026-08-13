@@ -41,7 +41,7 @@ module TelegramChannelConfig
             },
             {
               "active" => true,
-              "name" => "subscriber",
+              "name" => "subscribers",
               "req" => false,
               "type" => "`$INTEGER`",
               "index$" => 2,
@@ -90,6 +90,7 @@ module TelegramChannelConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/{channelUsername}",
                   "parts" => [

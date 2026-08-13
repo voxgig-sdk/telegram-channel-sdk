@@ -94,7 +94,7 @@ $get_channel_info = $client->GetChannelInfo();
 | --- | --- | --- | --- |
 | `description` | `string` | No |  |
 | `image` | `string` | No |  |
-| `subscriber` | `int` | No |  |
+| `subscribers` | `int` | No |  |
 | `title` | `string` | No |  |
 | `url` | `string` | No |  |
 | `username` | `string` | No |  |

@@ -260,7 +260,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | --- | --- |
 | `"description"` |  |
 | `"image"` |  |
-| `"subscriber"` |  |
+| `"subscribers"` |  |
 | `"title"` |  |
 | `"url"` |  |
 | `"username"` |  |
@@ -290,7 +290,7 @@ Create an instance: `getChannelInfo := client.GetChannelInfo(nil)`
 | --- | --- | --- |
 | `description` | `string` |  |
 | `image` | `string` |  |
-| `subscriber` | `int` |  |
+| `subscribers` | `int` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
 | `username` | `string` |  |

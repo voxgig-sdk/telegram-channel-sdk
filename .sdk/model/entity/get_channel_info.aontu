@@ -16,7 +16,7 @@ main: kit: entity: get_channel_info: {
       type: "`$STRING`"
     }
     {
-      name: "subscriber"
+      name: "subscribers"
       req: false
       type: "`$INTEGER`"
     }

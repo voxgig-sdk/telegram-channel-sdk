@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = TelegramChannelSDK.test()
 
 const getchannelinfo = await client.GetChannelInfo().load({ id: 'test01' })
-// getchannelinfo is a bare entity populated with mock response data
+// getchannelinfo is the entity, populated with mock response data
+// — call getchannelinfo.data() for the record itself
 console.log(getchannelinfo)
 ```
 
@@ -286,7 +287,7 @@ The `prepare()` method returns:
 | --- | --- |
 | `description` |  |
 | `image` |  |
-| `subscriber` |  |
+| `subscribers` |  |
 | `title` |  |
 | `url` |  |
 | `username` |  |
@@ -316,7 +317,7 @@ Create an instance: `const get_channel_info = client.GetChannelInfo()`
 | --- | --- | --- |
 | `description` | `string` |  |
 | `image` | `string` |  |
-| `subscriber` | `number` |  |
+| `subscribers` | `number` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
 | `username` | `string` |  |

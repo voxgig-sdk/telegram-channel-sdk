@@ -9,7 +9,7 @@
 ---@class GetChannelInfo
 ---@field description? string
 ---@field image? string
----@field subscriber? number
+---@field subscribers? number
 ---@field title? string
 ---@field url? string
 ---@field username? string

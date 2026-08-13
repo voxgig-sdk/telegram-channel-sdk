@@ -19,11 +19,15 @@ import {
 describe('GetChannelInfoDirect', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when TELEGRAMCHANNEL_TEST_LIVE=TRUE.
-  afterEach(liveDelay('TELEGRAMCHANNEL_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when TELEGRAM_CHANNEL_TEST_LIVE=TRUE.
+  afterEach(liveDelay('TELEGRAM_CHANNEL_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new TelegramChannelSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -77,17 +81,17 @@ function directSetup(mockres?: any) {
   const calls: any[] = []
 
   const env = envOverride({
-    'TELEGRAMCHANNEL_TEST_GET_CHANNEL_INFO_ENTID': {},
-    'TELEGRAMCHANNEL_TEST_LIVE': 'FALSE',
+    'TELEGRAM_CHANNEL_TEST_GET_CHANNEL_INFO_ENTID': {},
+    'TELEGRAM_CHANNEL_TEST_LIVE': 'FALSE',
   })
 
-  const live = 'TRUE' === env.TELEGRAMCHANNEL_TEST_LIVE
+  const live = 'TRUE' === env.TELEGRAM_CHANNEL_TEST_LIVE
 
   if (live) {
     const client = new TelegramChannelSDK({
     })
 
-    let idmap: any = env['TELEGRAMCHANNEL_TEST_GET_CHANNEL_INFO_ENTID']
+    let idmap: any = env['TELEGRAM_CHANNEL_TEST_GET_CHANNEL_INFO_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

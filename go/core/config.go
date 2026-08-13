@@ -40,7 +40,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "subscriber",
+						"name": "subscribers",
 						"req": false,
 						"type": "`$INTEGER`",
 						"index$": 2,
@@ -89,6 +89,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/{channelUsername}",
 								"parts": []any{
@@ -111,7 +112,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{

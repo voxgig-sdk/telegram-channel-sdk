@@ -4,7 +4,7 @@
       "GET_CHANNEL_INFO00": {
         "description": "s3c",
         "image": "s3d",
-        "subscriber": "s3e",
+        "subscribers": "s3e",
         "title": "s3f",
         "url": "s40",
         "username": "s41",
@@ -13,7 +13,7 @@
       "GET_CHANNEL_INFO01": {
         "description": "s78",
         "image": "s79",
-        "subscriber": "s7a",
+        "subscribers": "s7a",
         "title": "s7b",
         "url": "s7c",
         "username": "s7d",
@@ -22,7 +22,7 @@
       "GET_CHANNEL_INFO02": {
         "description": "sb4",
         "image": "sb5",
-        "subscriber": "sb6",
+        "subscribers": "sb6",
         "title": "sb7",
         "url": "sb8",
         "username": "sb9",
@@ -35,7 +35,7 @@
       "get_channel_info_ref01": {
         "description": "sf0",
         "image": "sf1",
-        "subscriber": "sf2",
+        "subscribers": "sf2",
         "title": "sf3",
         "url": "sf4",
         "username": "sf5"

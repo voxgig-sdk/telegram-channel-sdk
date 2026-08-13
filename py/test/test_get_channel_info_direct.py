@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from telegramchannel_sdk.utility.voxgig_struct import voxgig_struct as vs
 from telegramchannel_sdk import TelegramChannelSDK
-from core import helpers
+from telegramchannel_sdk.core import helpers
 from test import runner
 
 
@@ -63,11 +63,11 @@ def _get_channel_info_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "TELEGRAMCHANNEL_TEST_GET_CHANNEL_INFO_ENTID": {},
-        "TELEGRAMCHANNEL_TEST_LIVE": "FALSE",
+        "TELEGRAM_CHANNEL_TEST_GET_CHANNEL_INFO_ENTID": {},
+        "TELEGRAM_CHANNEL_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("TELEGRAMCHANNEL_TEST_LIVE") == "TRUE"
+    live = env.get("TELEGRAM_CHANNEL_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

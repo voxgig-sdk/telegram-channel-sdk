@@ -46,7 +46,7 @@ class TelegramChannelConfig
             ],
             [
               'active' => true,
-              'name' => 'subscriber',
+              'name' => 'subscribers',
               'req' => false,
               'type' => '`$INTEGER`',
               'index$' => 2,
@@ -95,6 +95,7 @@ class TelegramChannelConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/{channelUsername}',
                   'parts' => [

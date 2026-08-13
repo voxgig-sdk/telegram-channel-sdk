@@ -16,7 +16,7 @@
 # @!attribute [rw] image
 #   @return [String, nil]
 #
-# @!attribute [rw] subscriber
+# @!attribute [rw] subscribers
 #   @return [Integer, nil]
 #
 # @!attribute [rw] title
@@ -30,7 +30,7 @@
 GetChannelInfo = Struct.new(
   :description,
   :image,
-  :subscriber,
+  :subscribers,
   :title,
   :url,
   :username,

@@ -34,7 +34,7 @@ client = TelegramChannelSDK.new
 
 ```ruby
 begin
-  # load returns the bare GetChannelInfo record (raises on error).
+  # load returns the ENTITY — call data_get for the GetChannelInfo record (raises on error).
   getchannelinfo = client.GetChannelInfo.load({ "id" => "example_id" })
   puts getchannelinfo
 rescue => err
@@ -120,7 +120,8 @@ client = TelegramChannelSDK.test({
   "entity" => { "getchannelinfo" => { "test01" => { "id" => "test01" } } },
 })
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 getchannelinfo = client.GetChannelInfo.load({ "id" => "test01" })
 puts getchannelinfo
 ```
@@ -239,7 +240,7 @@ returns a result `Hash` with these keys:
 | --- | --- |
 | `description` |  |
 | `image` |  |
-| `subscriber` |  |
+| `subscribers` |  |
 | `title` |  |
 | `url` |  |
 | `username` |  |
@@ -269,7 +270,7 @@ Create an instance: `get_channel_info = client.GetChannelInfo`
 | --- | --- | --- |
 | `description` | `String` |  |
 | `image` | `String` |  |
-| `subscriber` | `Integer` |  |
+| `subscribers` | `Integer` |  |
 | `title` | `String` |  |
 | `url` | `String` |  |
 | `username` | `String` |  |
@@ -277,7 +278,7 @@ Create an instance: `get_channel_info = client.GetChannelInfo`
 #### Example: Load
 
 ```ruby
-# load returns the bare GetChannelInfo record (raises on error).
+# load returns the ENTITY — call data_get for the GetChannelInfo record (raises on error).
 get_channel_info = client.GetChannelInfo.load({ "id" => "get_channel_info_id" })
 ```
 

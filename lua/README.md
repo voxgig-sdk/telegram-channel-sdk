@@ -227,7 +227,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | --- | --- |
 | `description` |  |
 | `image` |  |
-| `subscriber` |  |
+| `subscribers` |  |
 | `title` |  |
 | `url` |  |
 | `username` |  |
@@ -257,7 +257,7 @@ Create an instance: `local get_channel_info = client:GetChannelInfo(nil)`
 | --- | --- | --- |
 | `description` | `string` |  |
 | `image` | `string` |  |
-| `subscriber` | `number` |  |
+| `subscribers` | `number` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
 | `username` | `string` |  |

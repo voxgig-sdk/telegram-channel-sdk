@@ -68,11 +68,11 @@ function get_channel_info_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["TELEGRAMCHANNEL_TEST_GET_CHANNEL_INFO_ENTID"] = {},
-    ["TELEGRAMCHANNEL_TEST_LIVE"] = "FALSE",
+    ["TELEGRAM_CHANNEL_TEST_GET_CHANNEL_INFO_ENTID"] = {},
+    ["TELEGRAM_CHANNEL_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["TELEGRAMCHANNEL_TEST_LIVE"] == "TRUE"
+  local live = env["TELEGRAM_CHANNEL_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

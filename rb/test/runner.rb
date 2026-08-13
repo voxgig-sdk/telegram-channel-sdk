@@ -23,8 +23,8 @@ module TelegramChannelTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("TELEGRAMCHANNEL_TEST_LIVE")
-    override = getenv("TELEGRAMCHANNEL_TEST_OVERRIDE")
+    live = getenv("TELEGRAM_CHANNEL_TEST_LIVE")
+    override = getenv("TELEGRAM_CHANNEL_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module TelegramChannelTestRunner
       end
     end
 
-    explain = getenv("TELEGRAMCHANNEL_TEST_EXPLAIN")
-    m["TELEGRAMCHANNEL_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("TELEGRAM_CHANNEL_TEST_EXPLAIN")
+    m["TELEGRAM_CHANNEL_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

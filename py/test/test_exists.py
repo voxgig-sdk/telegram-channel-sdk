@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# TelegramChannel SDK exists test
 
 import pytest
 from telegramchannel_sdk import TelegramChannelSDK

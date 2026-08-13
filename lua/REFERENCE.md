@@ -92,7 +92,7 @@ local get_channel_info = client:GetChannelInfo(nil)
 | --- | --- | --- | --- |
 | `description` | `string` | No |  |
 | `image` | `string` | No |  |
-| `subscriber` | `number` | No |  |
+| `subscribers` | `number` | No |  |
 | `title` | `string` | No |  |
 | `url` | `string` | No |  |
 | `username` | `string` | No |  |

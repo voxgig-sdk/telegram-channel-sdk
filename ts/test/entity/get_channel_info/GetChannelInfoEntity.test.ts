@@ -26,8 +26,8 @@ import {
 describe('GetChannelInfoEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when TELEGRAMCHANNEL_TEST_LIVE=TRUE.
-  afterEach(liveDelay('TELEGRAMCHANNEL_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when TELEGRAM_CHANNEL_TEST_LIVE=TRUE.
+  afterEach(liveDelay('TELEGRAM_CHANNEL_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = TelegramChannelSDK.test()

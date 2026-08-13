@@ -89,7 +89,7 @@ get_channel_info = client.GetChannelInfo()
 | --- | --- | --- | --- |
 | `description` | `str` | No |  |
 | `image` | `str` | No |  |
-| `subscriber` | `int` | No |  |
+| `subscribers` | `int` | No |  |
 | `title` | `str` | No |  |
 | `url` | `str` | No |  |
 | `username` | `str` | No |  |

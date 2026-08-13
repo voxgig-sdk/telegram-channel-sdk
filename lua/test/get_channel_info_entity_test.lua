@@ -29,7 +29,7 @@ describe("GetChannelInfoEntity", function()
     -- The basic flow consumes synthetic IDs from the fixture. In live mode
     -- without an *_ENTID env override, those IDs hit the live API and 4xx.
     if setup.synthetic_only then
-      pending("live entity test uses synthetic IDs from fixture — set TELEGRAMCHANNEL_TEST_GET_CHANNEL_INFO_ENTID JSON to run live")
+      pending("live entity test uses synthetic IDs from fixture — set TELEGRAM_CHANNEL_TEST_GET_CHANNEL_INFO_ENTID JSON to run live")
       return
     end
     local client = setup.client
@@ -84,22 +84,22 @@ function get_channel_info_basic_setup(extra)
   -- Detect ENTID env override before envOverride consumes it. When live
   -- mode is on without a real override, the basic test runs against synthetic
   -- IDs from the fixture and 4xx's. Surface this so the test can skip.
-  local entid_env_raw = os.getenv("TELEGRAMCHANNEL_TEST_GET_CHANNEL_INFO_ENTID")
+  local entid_env_raw = os.getenv("TELEGRAM_CHANNEL_TEST_GET_CHANNEL_INFO_ENTID")
   local idmap_overridden = entid_env_raw ~= nil and entid_env_raw:match("^%s*{") ~= nil
 
   local env = runner.env_override({
-    ["TELEGRAMCHANNEL_TEST_GET_CHANNEL_INFO_ENTID"] = idmap,
-    ["TELEGRAMCHANNEL_TEST_LIVE"] = "FALSE",
-    ["TELEGRAMCHANNEL_TEST_EXPLAIN"] = "FALSE",
+    ["TELEGRAM_CHANNEL_TEST_GET_CHANNEL_INFO_ENTID"] = idmap,
+    ["TELEGRAM_CHANNEL_TEST_LIVE"] = "FALSE",
+    ["TELEGRAM_CHANNEL_TEST_EXPLAIN"] = "FALSE",
   })
 
   local idmap_resolved = helpers.to_map(
-    env["TELEGRAMCHANNEL_TEST_GET_CHANNEL_INFO_ENTID"])
+    env["TELEGRAM_CHANNEL_TEST_GET_CHANNEL_INFO_ENTID"])
   if idmap_resolved == nil then
     idmap_resolved = helpers.to_map(idmap)
   end
 
-  if env["TELEGRAMCHANNEL_TEST_LIVE"] == "TRUE" then
+  if env["TELEGRAM_CHANNEL_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
       },
@@ -108,13 +108,13 @@ function get_channel_info_basic_setup(extra)
     client = sdk.new(helpers.to_map(merged_opts))
   end
 
-  local live = env["TELEGRAMCHANNEL_TEST_LIVE"] == "TRUE"
+  local live = env["TELEGRAM_CHANNEL_TEST_LIVE"] == "TRUE"
   return {
     client = client,
     data = entity_data,
     idmap = idmap_resolved,
     env = env,
-    explain = env["TELEGRAMCHANNEL_TEST_EXPLAIN"] == "TRUE",
+    explain = env["TELEGRAM_CHANNEL_TEST_EXPLAIN"] == "TRUE",
     live = live,
     synthetic_only = live and not idmap_overridden,
     now = os.time() * 1000,

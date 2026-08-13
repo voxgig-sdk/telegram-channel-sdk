@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'TelegramChannel',
   }
 
 
@@ -70,7 +70,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "subscriber",
+          "name": "subscribers",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 2
@@ -119,6 +119,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/{channelUsername}",
               "parts": [

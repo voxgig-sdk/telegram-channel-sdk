@@ -17,7 +17,7 @@ class GetChannelInfo
 {
     public ?string $description = null;
     public ?string $image = null;
-    public ?int $subscriber = null;
+    public ?int $subscribers = null;
     public ?string $title = null;
     public ?string $url = null;
     public ?string $username = null;

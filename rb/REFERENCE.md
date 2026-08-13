@@ -95,7 +95,7 @@ get_channel_info = client.GetChannelInfo
 | --- | --- | --- | --- |
 | `description` | `String` | No |  |
 | `image` | `String` | No |  |
-| `subscriber` | `Integer` | No |  |
+| `subscribers` | `Integer` | No |  |
 | `title` | `String` | No |  |
 | `url` | `String` | No |  |
 | `username` | `String` | No |  |

@@ -23,7 +23,7 @@ support (`load`):
 
 ```ts
 const client = new TelegramChannelSDK()
-const getchannelinfo = await client.GetChannelInfo().load()
+const getchannelinfo = await client.GetChannelInfo().load({ id: "example_id" })
 ```
 
 Thinking in entities keeps the mental model small — for people and AI agents alike —
@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = TelegramChannelSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = TelegramChannelSDK.test({
+  entity: {
+    get_channel_info: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const getchannelinfo = await client.GetChannelInfo().load({ id: 'test01' })
-// getchannelinfo is a bare GetChannelInfo populated with mock data
+// getchannelinfo is the GetChannelInfo entity, populated with mock data
+// — call getchannelinfo.data() for the record itself
 console.log(getchannelinfo)
 ```
 
@@ -182,7 +191,7 @@ require_once 'telegramchannel_sdk.php';
 $client = new TelegramChannelSDK();
 
 
-// Load a specific getchannelinfo (returns the bare record; throws on error)
+// Load a specific getchannelinfo (returns the ENTITY; call data_get() for the record; throws on error)
 $getchannelinfo = $client->GetChannelInfo()->load(["id" => "example_id"]);
 print_r($getchannelinfo);
 ```
@@ -210,7 +219,7 @@ require_relative "TelegramChannel_sdk"
 client = TelegramChannelSDK.new
 
 
-# Load a specific getchannelinfo (returns the bare record; raises on error)
+# Load a specific getchannelinfo (returns the ENTITY; call data_get for the record)
 getchannelinfo = client.GetChannelInfo.load({ "id" => "example_id" })
 puts getchannelinfo
 ```
@@ -344,6 +353,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://t.me/n9he1](https://t.me/n9he1)
 

@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ TelegramChannelUtility::setRegistrar(function (TelegramChannelUtility $u): void 
     $u->prepare_params = [TelegramChannelPrepareParams::class, 'call'];
     $u->prepare_path = [TelegramChannelPreparePath::class, 'call'];
     $u->prepare_query = [TelegramChannelPrepareQuery::class, 'call'];
+    $u->graphql_body = [TelegramChannelGraphql::class, 'body'];
+    $u->graphql_errors = [TelegramChannelGraphql::class, 'errors'];
     $u->result_basic = [TelegramChannelResultBasic::class, 'call'];
     $u->result_body = [TelegramChannelResultBody::class, 'call'];
     $u->result_headers = [TelegramChannelResultHeaders::class, 'call'];

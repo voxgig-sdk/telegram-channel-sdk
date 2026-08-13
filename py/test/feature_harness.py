@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import TelegramChannelControl
-from core.error import TelegramChannelError
-from core.result import TelegramChannelResult
-from core.spec import TelegramChannelSpec
+from telegramchannel_sdk.config import make_config
+from telegramchannel_sdk.features import _make_feature
+from telegramchannel_sdk.core.control import TelegramChannelControl
+from telegramchannel_sdk.core.error import TelegramChannelError
+from telegramchannel_sdk.core.result import TelegramChannelResult
+from telegramchannel_sdk.core.spec import TelegramChannelSpec
 
 
 # True when this SDK was generated with the named feature.
