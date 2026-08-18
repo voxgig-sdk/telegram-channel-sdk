@@ -23,8 +23,8 @@ class TelegramChannelSDK:
         utility = TelegramChannelUtility()
         self._utility = utility
 
-        from telegramchannel_sdk.config import make_config
-        config = make_config()
+        from telegramchannel_sdk.config import shared_config
+        config = shared_config()
 
         self._rootctx = utility.make_context({
             "client": self,

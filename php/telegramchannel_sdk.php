@@ -40,7 +40,7 @@ class TelegramChannelSDK
         $utility = new TelegramChannelUtility();
         $this->_utility = $utility;
 
-        $config = TelegramChannelConfig::make_config();
+        $config = TelegramChannelConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

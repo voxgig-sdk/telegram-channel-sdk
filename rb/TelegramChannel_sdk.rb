@@ -28,7 +28,7 @@ class TelegramChannelSDK
     utility = TelegramChannelUtility.new
     @_utility = utility
 
-    config = TelegramChannelConfig.make_config
+    config = TelegramChannelConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
