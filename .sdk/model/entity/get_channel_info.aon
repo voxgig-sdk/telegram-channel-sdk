@@ -8,31 +8,37 @@ main: kit: entity: get_channel_info: {
     {
       name: "description"
       req: false
+      short: "Channel description"
       type: "`$STRING`"
     }
     {
       name: "image"
       req: false
+      short: "URL to the channel profile image"
       type: "`$STRING`"
     }
     {
       name: "subscribers"
       req: false
+      short: "Number of channel subscribers"
       type: "`$INTEGER`"
     }
     {
       name: "title"
       req: false
+      short: "Channel title"
       type: "`$STRING`"
     }
     {
       name: "url"
       req: false
+      short: "Full URL to the channel"
       type: "`$STRING`"
     }
     {
       name: "username"
       req: false
+      short: "Channel username"
       type: "`$STRING`"
     }
   ]

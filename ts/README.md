@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -285,12 +285,12 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `image` |  |
-| `subscribers` |  |
-| `title` |  |
-| `url` |  |
-| `username` |  |
+| `description` | Channel description |
+| `image` | URL to the channel profile image |
+| `subscribers` | Number of channel subscribers |
+| `title` | Channel title |
+| `url` | Full URL to the channel |
+| `username` | Channel username |
 
 Operations: load.
 
@@ -315,12 +315,12 @@ Create an instance: `const get_channel_info = client.GetChannelInfo()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `image` | `string` |  |
-| `subscribers` | `number` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
-| `username` | `string` |  |
+| `description` | `string` | Channel description |
+| `image` | `string` | URL to the channel profile image |
+| `subscribers` | `number` | Number of channel subscribers |
+| `title` | `string` | Channel title |
+| `url` | `string` | Full URL to the channel |
+| `username` | `string` | Channel username |
 
 #### Example: Load
 

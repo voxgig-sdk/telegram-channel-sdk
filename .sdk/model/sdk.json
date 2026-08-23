@@ -36,36 +36,42 @@
               "active": true,
               "name": "description",
               "req": false,
+              "short": "Channel description",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "image",
               "req": false,
+              "short": "URL to the channel profile image",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "subscribers",
               "req": false,
+              "short": "Number of channel subscribers",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "title",
               "req": false,
+              "short": "Channel title",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "url",
               "req": false,
+              "short": "Full URL to the channel",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "username",
               "req": false,
+              "short": "Channel username",
               "type": "`$STRING`"
             }
           ],

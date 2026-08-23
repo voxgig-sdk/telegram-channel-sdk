@@ -241,12 +241,12 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `image` |  |
-| `subscribers` |  |
-| `title` |  |
-| `url` |  |
-| `username` |  |
+| `description` | Channel description |
+| `image` | URL to the channel profile image |
+| `subscribers` | Number of channel subscribers |
+| `title` | Channel title |
+| `url` | Full URL to the channel |
+| `username` | Channel username |
 
 Operations: Load.
 
@@ -271,12 +271,12 @@ Create an instance: `get_channel_info = client.GetChannelInfo()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `str` |  |
-| `image` | `str` |  |
-| `subscribers` | `int` |  |
-| `title` | `str` |  |
-| `url` | `str` |  |
-| `username` | `str` |  |
+| `description` | `str` | Channel description |
+| `image` | `str` | URL to the channel profile image |
+| `subscribers` | `int` | Number of channel subscribers |
+| `title` | `str` | Channel title |
+| `url` | `str` | Full URL to the channel |
+| `username` | `str` | Channel username |
 
 #### Example: Load
 

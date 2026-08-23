@@ -6,7 +6,7 @@ The Golang SDK for the TelegramChannel API — an entity-oriented client using s
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.GetChannelInfo(nil)` — each with the same small set of operations (`Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -258,12 +258,12 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"description"` |  |
-| `"image"` |  |
-| `"subscribers"` |  |
-| `"title"` |  |
-| `"url"` |  |
-| `"username"` |  |
+| `"description"` | Channel description |
+| `"image"` | URL to the channel profile image |
+| `"subscribers"` | Number of channel subscribers |
+| `"title"` | Channel title |
+| `"url"` | Full URL to the channel |
+| `"username"` | Channel username |
 
 Operations: Load.
 
@@ -288,12 +288,12 @@ Create an instance: `getChannelInfo := client.GetChannelInfo(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `image` | `string` |  |
-| `subscribers` | `int` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
-| `username` | `string` |  |
+| `description` | `string` | Channel description |
+| `image` | `string` | URL to the channel profile image |
+| `subscribers` | `int` | Number of channel subscribers |
+| `title` | `string` | Channel title |
+| `url` | `string` | Full URL to the channel |
+| `username` | `string` | Channel username |
 
 #### Example: Load
 

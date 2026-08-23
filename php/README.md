@@ -248,12 +248,12 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `image` |  |
-| `subscribers` |  |
-| `title` |  |
-| `url` |  |
-| `username` |  |
+| `description` | Channel description |
+| `image` | URL to the channel profile image |
+| `subscribers` | Number of channel subscribers |
+| `title` | Channel title |
+| `url` | Full URL to the channel |
+| `username` | Channel username |
 
 Operations: Load.
 
@@ -278,12 +278,12 @@ Create an instance: `$get_channel_info = $client->GetChannelInfo();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `image` | `string` |  |
-| `subscribers` | `int` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
-| `username` | `string` |  |
+| `description` | `string` | Channel description |
+| `image` | `string` | URL to the channel profile image |
+| `subscribers` | `int` | Number of channel subscribers |
+| `title` | `string` | Channel title |
+| `url` | `string` | Full URL to the channel |
+| `username` | `string` | Channel username |
 
 #### Example: Load
 

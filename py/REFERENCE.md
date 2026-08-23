@@ -87,12 +87,12 @@ get_channel_info = client.GetChannelInfo()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `str` | No |  |
-| `image` | `str` | No |  |
-| `subscribers` | `int` | No |  |
-| `title` | `str` | No |  |
-| `url` | `str` | No |  |
-| `username` | `str` | No |  |
+| `description` | `str` | No | Channel description |
+| `image` | `str` | No | URL to the channel profile image |
+| `subscribers` | `int` | No | Number of channel subscribers |
+| `title` | `str` | No | Channel title |
+| `url` | `str` | No | Full URL to the channel |
+| `username` | `str` | No | Channel username |
 
 ### Operations
 

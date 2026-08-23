@@ -33,6 +33,9 @@ class TelegramChannelConfig
         return [
             "main" => [
                 "name" => "TelegramChannel",
+                "slug" => "telegram-channel",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -55,26 +58,32 @@ class TelegramChannelConfig
           'fields' => [
             [
               'name' => 'description',
+              'short' => 'Channel description',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'image',
+              'short' => 'URL to the channel profile image',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'subscribers',
+              'short' => 'Number of channel subscribers',
               'type' => '`$INTEGER`',
             ],
             [
               'name' => 'title',
+              'short' => 'Channel title',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'url',
+              'short' => 'Full URL to the channel',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'username',
+              'short' => 'Channel username',
               'type' => '`$STRING`',
             ],
           ],

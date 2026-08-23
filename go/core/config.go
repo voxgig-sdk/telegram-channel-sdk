@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "TelegramChannel",
+			"slug": "telegram-channel",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,26 +36,32 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "description",
+						"short": "Channel description",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "image",
+						"short": "URL to the channel profile image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "subscribers",
+						"short": "Number of channel subscribers",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "title",
+						"short": "Channel title",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
+						"short": "Full URL to the channel",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "username",
+						"short": "Channel username",
 						"type": "`$STRING`",
 					},
 				},

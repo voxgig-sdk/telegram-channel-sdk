@@ -225,12 +225,12 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `image` |  |
-| `subscribers` |  |
-| `title` |  |
-| `url` |  |
-| `username` |  |
+| `description` | Channel description |
+| `image` | URL to the channel profile image |
+| `subscribers` | Number of channel subscribers |
+| `title` | Channel title |
+| `url` | Full URL to the channel |
+| `username` | Channel username |
 
 Operations: Load.
 
@@ -255,12 +255,12 @@ Create an instance: `local get_channel_info = client:GetChannelInfo(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `image` | `string` |  |
-| `subscribers` | `number` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
-| `username` | `string` |  |
+| `description` | `string` | Channel description |
+| `image` | `string` | URL to the channel profile image |
+| `subscribers` | `number` | Number of channel subscribers |
+| `title` | `string` | Channel title |
+| `url` | `string` | Full URL to the channel |
+| `username` | `string` | Channel username |
 
 #### Example: Load
 

@@ -238,12 +238,12 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `image` |  |
-| `subscribers` |  |
-| `title` |  |
-| `url` |  |
-| `username` |  |
+| `description` | Channel description |
+| `image` | URL to the channel profile image |
+| `subscribers` | Number of channel subscribers |
+| `title` | Channel title |
+| `url` | Full URL to the channel |
+| `username` | Channel username |
 
 Operations: Load.
 
@@ -268,12 +268,12 @@ Create an instance: `get_channel_info = client.GetChannelInfo`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `String` |  |
-| `image` | `String` |  |
-| `subscribers` | `Integer` |  |
-| `title` | `String` |  |
-| `url` | `String` |  |
-| `username` | `String` |  |
+| `description` | `String` | Channel description |
+| `image` | `String` | URL to the channel profile image |
+| `subscribers` | `Integer` | Number of channel subscribers |
+| `title` | `String` | Channel title |
+| `url` | `String` | Full URL to the channel |
+| `username` | `String` | Channel username |
 
 #### Example: Load
 

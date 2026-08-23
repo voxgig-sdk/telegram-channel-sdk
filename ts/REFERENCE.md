@@ -116,12 +116,12 @@ const get_channel_info = client.GetChannelInfo()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `string` | No |  |
-| `image` | `string` | No |  |
-| `subscribers` | `number` | No |  |
-| `title` | `string` | No |  |
-| `url` | `string` | No |  |
-| `username` | `string` | No |  |
+| `description` | `string` | No | Channel description |
+| `image` | `string` | No | URL to the channel profile image |
+| `subscribers` | `number` | No | Number of channel subscribers |
+| `title` | `string` | No | Channel title |
+| `url` | `string` | No | Full URL to the channel |
+| `username` | `string` | No | Channel username |
 
 ### Operations
 

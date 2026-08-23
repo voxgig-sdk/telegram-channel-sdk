@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'TelegramChannel',
+        slug: "telegram-channel",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -56,26 +67,32 @@ class Config {
       "fields": [
         {
           "name": "description",
+          "short": "Channel description",
           "type": "`$STRING`"
         },
         {
           "name": "image",
+          "short": "URL to the channel profile image",
           "type": "`$STRING`"
         },
         {
           "name": "subscribers",
+          "short": "Number of channel subscribers",
           "type": "`$INTEGER`"
         },
         {
           "name": "title",
+          "short": "Channel title",
           "type": "`$STRING`"
         },
         {
           "name": "url",
+          "short": "Full URL to the channel",
           "type": "`$STRING`"
         },
         {
           "name": "username",
+          "short": "Channel username",
           "type": "`$STRING`"
         }
       ],
