@@ -8,6 +8,7 @@
 
 ---@class GetChannelInfo
 ---@field description? string
+---@field id? string
 ---@field image? string
 ---@field subscribers? number
 ---@field title? string

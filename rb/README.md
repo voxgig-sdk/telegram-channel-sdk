@@ -239,6 +239,7 @@ returns a result `Hash` with these keys:
 | Field | Description |
 | --- | --- |
 | `description` | Channel description |
+| `id` |  |
 | `image` | URL to the channel profile image |
 | `subscribers` | Number of channel subscribers |
 | `title` | Channel title |
@@ -269,6 +270,7 @@ Create an instance: `get_channel_info = client.GetChannelInfo`
 | Field | Type | Description |
 | --- | --- | --- |
 | `description` | `String` | Channel description |
+| `id` | `String` |  |
 | `image` | `String` | URL to the channel profile image |
 | `subscribers` | `Integer` | Number of channel subscribers |
 | `title` | `String` | Channel title |

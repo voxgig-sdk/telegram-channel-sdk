@@ -259,6 +259,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | Field | Description |
 | --- | --- |
 | `"description"` | Channel description |
+| `"id"` |  |
 | `"image"` | URL to the channel profile image |
 | `"subscribers"` | Number of channel subscribers |
 | `"title"` | Channel title |
@@ -289,6 +290,7 @@ Create an instance: `getChannelInfo := client.GetChannelInfo(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `description` | `string` | Channel description |
+| `id` | `string` |  |
 | `image` | `string` | URL to the channel profile image |
 | `subscribers` | `int` | Number of channel subscribers |
 | `title` | `string` | Channel title |

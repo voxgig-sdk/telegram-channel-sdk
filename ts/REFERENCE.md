@@ -117,6 +117,7 @@ const get_channel_info = client.GetChannelInfo()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `description` | `string` | No | Channel description |
+| `id` | `string` | No |  |
 | `image` | `string` | No | URL to the channel profile image |
 | `subscribers` | `number` | No | Number of channel subscribers |
 | `title` | `string` | No | Channel title |

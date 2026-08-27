@@ -15,6 +15,7 @@ import (
 // GetChannelInfo is the typed data model for the get_channel_info entity.
 type GetChannelInfo struct {
 	Description *string `json:"description,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Image *string `json:"image,omitempty"`
 	Subscribers *int `json:"subscribers,omitempty"`
 	Title *string `json:"title,omitempty"`

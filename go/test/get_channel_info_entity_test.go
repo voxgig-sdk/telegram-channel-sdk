@@ -61,13 +61,19 @@ func TestGetChannelInfoEntity(t *testing.T) {
 
 		// LOAD
 		getChannelInfoRef01Ent := client.GetChannelInfo(nil)
-		getChannelInfoRef01MatchDt0 := map[string]any{}
+		getChannelInfoRef01MatchDt0 := map[string]any{
+			"id": getChannelInfoRef01Data["id"],
+		}
 		getChannelInfoRef01DataDt0Loaded, err := getChannelInfoRef01Ent.Load(getChannelInfoRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if getChannelInfoRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		getChannelInfoRef01DataDt0LoadResult := core.ToMapAny(entityData(getChannelInfoRef01DataDt0Loaded))
+		if getChannelInfoRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if getChannelInfoRef01DataDt0LoadResult["id"] != getChannelInfoRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

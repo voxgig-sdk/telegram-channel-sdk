@@ -12,6 +12,11 @@ main: kit: entity: get_channel_info: {
       type: "`$STRING`"
     }
     {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "image"
       req: false
       short: "URL to the channel profile image"
@@ -42,6 +47,11 @@ main: kit: entity: get_channel_info: {
       type: "`$STRING`"
     }
   ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
 
   name: "get_channel_info"
   op: {

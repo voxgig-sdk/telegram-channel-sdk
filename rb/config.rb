@@ -28,6 +28,7 @@ module TelegramChannelConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
@@ -45,6 +46,10 @@ module TelegramChannelConfig
             {
               "name" => "description",
               "short" => "Channel description",
+              "type" => "`$STRING`",
+            },
+            {
+              "name" => "id",
               "type" => "`$STRING`",
             },
             {

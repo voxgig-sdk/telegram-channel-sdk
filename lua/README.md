@@ -226,6 +226,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | Field | Description |
 | --- | --- |
 | `description` | Channel description |
+| `id` |  |
 | `image` | URL to the channel profile image |
 | `subscribers` | Number of channel subscribers |
 | `title` | Channel title |
@@ -256,6 +257,7 @@ Create an instance: `local get_channel_info = client:GetChannelInfo(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `description` | `string` | Channel description |
+| `id` | `string` |  |
 | `image` | `string` | URL to the channel profile image |
 | `subscribers` | `number` | Number of channel subscribers |
 | `title` | `string` | Channel title |

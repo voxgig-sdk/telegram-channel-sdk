@@ -2,43 +2,43 @@
   "existing": {
     "get_channel_info": {
       "GET_CHANNEL_INFO00": {
-        "description": "s3c",
-        "image": "s3d",
-        "subscribers": "s3e",
-        "title": "s3f",
-        "url": "s40",
-        "username": "s41",
-        "id": "GET_CHANNEL_INFO00"
+        "description": "s46",
+        "id": "GET_CHANNEL_INFO00",
+        "image": "s48",
+        "subscribers": "s49",
+        "title": "s4a",
+        "url": "s4b",
+        "username": "s4c"
       },
       "GET_CHANNEL_INFO01": {
-        "description": "s78",
-        "image": "s79",
-        "subscribers": "s7a",
-        "title": "s7b",
-        "url": "s7c",
-        "username": "s7d",
-        "id": "GET_CHANNEL_INFO01"
+        "description": "s8c",
+        "id": "GET_CHANNEL_INFO01",
+        "image": "s8e",
+        "subscribers": "s8f",
+        "title": "s90",
+        "url": "s91",
+        "username": "s92"
       },
       "GET_CHANNEL_INFO02": {
-        "description": "sb4",
-        "image": "sb5",
-        "subscribers": "sb6",
-        "title": "sb7",
-        "url": "sb8",
-        "username": "sb9",
-        "id": "GET_CHANNEL_INFO02"
+        "description": "sd2",
+        "id": "GET_CHANNEL_INFO02",
+        "image": "sd4",
+        "subscribers": "sd5",
+        "title": "sd6",
+        "url": "sd7",
+        "username": "sd8"
       }
     }
   },
   "new": {
     "get_channel_info": {
       "get_channel_info_ref01": {
-        "description": "sf0",
-        "image": "sf1",
-        "subscribers": "sf2",
-        "title": "sf3",
-        "url": "sf4",
-        "username": "sf5"
+        "description": "s118",
+        "image": "s11a",
+        "subscribers": "s11b",
+        "title": "s11c",
+        "url": "s11d",
+        "username": "s11e"
       }
     }
   }

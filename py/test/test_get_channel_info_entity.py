@@ -48,9 +48,13 @@ class TestGetChannelInfoEntity:
 
         # LOAD
         get_channel_info_ref01_ent = client.GetChannelInfo(None)
-        get_channel_info_ref01_match_dt0 = {}
+        get_channel_info_ref01_match_dt0 = {
+            "id": get_channel_info_ref01_data["id"],
+        }
         get_channel_info_ref01_data_dt0_loaded = get_channel_info_ref01_ent.load(get_channel_info_ref01_match_dt0, None)
-        assert get_channel_info_ref01_data_dt0_loaded is not None
+        get_channel_info_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(get_channel_info_ref01_data_dt0_loaded))
+        assert get_channel_info_ref01_data_dt0_load_result is not None
+        assert get_channel_info_ref01_data_dt0_load_result["id"] == get_channel_info_ref01_data["id"]
 
 
 

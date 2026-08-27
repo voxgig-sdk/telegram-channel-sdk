@@ -42,6 +42,7 @@ class TelegramChannelConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [
@@ -59,6 +60,10 @@ class TelegramChannelConfig
             [
               'name' => 'description',
               'short' => 'Channel description',
+              'type' => '`$STRING`',
+            ],
+            [
+              'name' => 'id',
               'type' => '`$STRING`',
             ],
             [

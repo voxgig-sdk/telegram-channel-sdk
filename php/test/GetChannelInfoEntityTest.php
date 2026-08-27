@@ -48,9 +48,13 @@ class GetChannelInfoEntityTest extends TestCase
 
         // LOAD
         $get_channel_info_ref01_ent = $client->GetChannelInfo(null);
-        $get_channel_info_ref01_match_dt0 = [];
+        $get_channel_info_ref01_match_dt0 = [
+            "id" => $get_channel_info_ref01_data["id"],
+        ];
         $get_channel_info_ref01_data_dt0_loaded = $get_channel_info_ref01_ent->load($get_channel_info_ref01_match_dt0, null);
-        $this->assertNotNull($get_channel_info_ref01_data_dt0_loaded);
+        $get_channel_info_ref01_data_dt0_load_result = Helpers::to_map(is_object($get_channel_info_ref01_data_dt0_loaded) && method_exists($get_channel_info_ref01_data_dt0_loaded, 'data_get') ? $get_channel_info_ref01_data_dt0_loaded->data_get() : $get_channel_info_ref01_data_dt0_loaded);
+        $this->assertNotNull($get_channel_info_ref01_data_dt0_load_result);
+        $this->assertEquals($get_channel_info_ref01_data_dt0_load_result["id"], $get_channel_info_ref01_data["id"]);
 
     }
 }

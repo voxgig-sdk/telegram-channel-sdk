@@ -18,6 +18,7 @@ from typing import TypedDict, Any
 
 class GetChannelInfo(TypedDict, total=False):
     description: str
+    id: str
     image: str
     subscribers: int
     title: str

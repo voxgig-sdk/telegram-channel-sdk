@@ -242,6 +242,7 @@ On error, `ok` is `False` and `err` contains the error value.
 | Field | Description |
 | --- | --- |
 | `description` | Channel description |
+| `id` |  |
 | `image` | URL to the channel profile image |
 | `subscribers` | Number of channel subscribers |
 | `title` | Channel title |
@@ -272,6 +273,7 @@ Create an instance: `get_channel_info = client.GetChannelInfo()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `description` | `str` | Channel description |
+| `id` | `str` |  |
 | `image` | `str` | URL to the channel profile image |
 | `subscribers` | `int` | Number of channel subscribers |
 | `title` | `str` | Channel title |

@@ -88,6 +88,7 @@ get_channel_info = client.GetChannelInfo()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `description` | `str` | No | Channel description |
+| `id` | `str` | No |  |
 | `image` | `str` | No | URL to the channel profile image |
 | `subscribers` | `int` | No | Number of channel subscribers |
 | `title` | `str` | No | Channel title |

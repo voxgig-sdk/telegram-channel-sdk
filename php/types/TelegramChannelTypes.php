@@ -16,6 +16,7 @@ declare(strict_types=1);
 class GetChannelInfo
 {
     public ?string $description = null;
+    public ?string $id = null;
     public ?string $image = null;
     public ?int $subscribers = null;
     public ?string $title = null;
