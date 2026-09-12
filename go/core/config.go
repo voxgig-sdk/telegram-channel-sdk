@@ -45,6 +45,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "image",
 						"short": "URL to the channel profile image",
 						"type": "`$STRING`",
@@ -60,6 +61,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "url",
 						"short": "Full URL to the channel",
 						"type": "`$STRING`",
@@ -69,6 +71,10 @@ func MakeConfig() map[string]any {
 						"short": "Channel username",
 						"type": "`$STRING`",
 					},
+				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
 				},
 				"name": "get_channel_info",
 				"op": map[string]any{
@@ -92,12 +98,14 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/{channelUsername}",
-								"parts": []any{
-									"{id}",
-								},
 								"rename": map[string]any{
 									"param": map[string]any{
 										"channelUsername": "id",
+									},
+								},
+								"segments": []any{
+									map[string]any{
+										"var": "id",
 									},
 								},
 								"select": map[string]any{
@@ -109,6 +117,9 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
+								"parts": []any{
+									"{id}",
+								},
 							},
 						},
 					},
@@ -119,6 +130,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (

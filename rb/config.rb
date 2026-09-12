@@ -53,6 +53,7 @@ module TelegramChannelConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "image",
               "short" => "URL to the channel profile image",
               "type" => "`$STRING`",
@@ -68,6 +69,7 @@ module TelegramChannelConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "url",
               "short" => "Full URL to the channel",
               "type" => "`$STRING`",
@@ -78,6 +80,10 @@ module TelegramChannelConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "get_channel_info",
           "op" => {
             "load" => {
@@ -100,14 +106,16 @@ module TelegramChannelConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/{channelUsername}",
-                  "parts" => [
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "channelUsername" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -117,6 +125,9 @@ module TelegramChannelConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "{id}",
+                  ],
                 },
               ],
             },

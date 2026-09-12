@@ -17,6 +17,7 @@ main: kit: entity: get_channel_info: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "image"
       req: false
       short: "URL to the channel profile image"
@@ -35,6 +36,7 @@ main: kit: entity: get_channel_info: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "url"
       req: false
       short: "Full URL to the channel"
@@ -73,14 +75,16 @@ main: kit: entity: get_channel_info: {
           }
           method: "GET"
           orig: "/{channelUsername}"
-          parts: [
-            "{id}"
-          ]
           rename: {
             param: {
               channelUsername: "id"
             }
           }
+          segments: [
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

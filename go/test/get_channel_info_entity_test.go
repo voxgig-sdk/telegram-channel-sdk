@@ -50,7 +50,7 @@ func TestGetChannelInfoEntity(t *testing.T) {
 		client := setup.client
 
 		// Bootstrap entity data from existing test data (no create step in flow).
-		getChannelInfoRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath("existing.get_channel_info", setup.data)))
+		getChannelInfoRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath(setup.data, "existing.get_channel_info")))
 		var getChannelInfoRef01Data map[string]any
 		if len(getChannelInfoRef01DataRaw) > 0 {
 			getChannelInfoRef01Data = core.ToMapAny(getChannelInfoRef01DataRaw[0][1])
@@ -103,7 +103,7 @@ func get_channel_infoBasicSetup(extra map[string]any) *entityTestSetup {
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"get_channel_info01", "get_channel_info02", "get_channel_info03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -131,10 +131,22 @@ func get_channel_infoBasicSetup(extra map[string]any) *entityTestSetup {
 	}
 
 	if env["TELEGRAM_CHANNEL_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewTelegramChannelSDK(core.ToMapAny(mergedOpts))
 	}
