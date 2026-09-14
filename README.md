@@ -105,7 +105,7 @@ local result, err = client:GetChannelInfo():load({ id = "test01" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/telegram-channel` | publish pending — [install from git tag](https://github.com/voxgig-sdk/telegram-channel-sdk/releases) |
+| TypeScript | `@voxgig-sdk/telegram-channel-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/telegram-channel-sdk/releases) |
 | Python | `voxgig-sdk-telegram-channel` | publish pending — [install from git tag](https://github.com/voxgig-sdk/telegram-channel-sdk/releases) |
 | PHP | `voxgig-sdk/telegram-channel` | publish pending — [install from git tag](https://github.com/voxgig-sdk/telegram-channel-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/telegram-channel-sdk/go` | `go get github.com/voxgig-sdk/telegram-channel-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:GetChannelInfo():load({ id = "test01" })
 ### TypeScript
 
 ```ts
-import { TelegramChannelSDK } from '@voxgig-sdk/telegram-channel'
+import { TelegramChannelSDK } from '@voxgig-sdk/telegram-channel-sdk'
 
 const client = new TelegramChannelSDK()
 

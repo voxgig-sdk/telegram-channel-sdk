@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { TelegramChannelSDK } from '@voxgig-sdk/telegram-channel'
+import { TelegramChannelSDK } from '@voxgig-sdk/telegram-channel-sdk'
 
 const client = new TelegramChannelSDK()
 ```
@@ -413,7 +413,7 @@ telegram-channel/
 Import the SDK from the package root:
 
 ```ts
-import { TelegramChannelSDK } from '@voxgig-sdk/telegram-channel'
+import { TelegramChannelSDK } from '@voxgig-sdk/telegram-channel-sdk'
 ```
 
 ### Entity state
