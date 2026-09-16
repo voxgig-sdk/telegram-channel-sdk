@@ -5,7 +5,7 @@
         "description": "s46",
         "id": "GET_CHANNEL_INFO00",
         "image": "s48",
-        "subscribers": "s49",
+        "subscribers": 73,
         "title": "s4a",
         "url": "s4b",
         "username": "s4c"
@@ -14,7 +14,7 @@
         "description": "s8c",
         "id": "GET_CHANNEL_INFO01",
         "image": "s8e",
-        "subscribers": "s8f",
+        "subscribers": 143,
         "title": "s90",
         "url": "s91",
         "username": "s92"
@@ -23,7 +23,7 @@
         "description": "sd2",
         "id": "GET_CHANNEL_INFO02",
         "image": "sd4",
-        "subscribers": "sd5",
+        "subscribers": 213,
         "title": "sd6",
         "url": "sd7",
         "username": "sd8"
@@ -35,10 +35,131 @@
       "get_channel_info_ref01": {
         "description": "s118",
         "image": "s11a",
-        "subscribers": "s11b",
+        "subscribers": 283,
         "title": "s11c",
         "url": "s11d",
         "username": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "GET /{channelUsername}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getChannelInfo",
+        "parameters": [
+          {
+            "description": "The username of the Telegram channel (without @)",
+            "in": "path",
+            "name": "channelUsername",
+            "required": true,
+            "schema": {
+              "example": "n9he1",
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "description": {
+                      "description": "Channel description",
+                      "example": "مُجرد زاوية أخرى من عالمي, أدون فيها ما لا يصلح للضجيج 🤍",
+                      "type": "string"
+                    },
+                    "image": {
+                      "description": "URL to the channel profile image",
+                      "format": "uri",
+                      "type": "string"
+                    },
+                    "subscribers": {
+                      "description": "Number of channel subscribers",
+                      "example": 12177,
+                      "type": "integer"
+                    },
+                    "title": {
+                      "description": "Channel title",
+                      "example": "» مُـنذ 25 يَنـايِر \"🪐♥„",
+                      "type": "string"
+                    },
+                    "url": {
+                      "description": "Full URL to the channel",
+                      "example": "https://t.me/n9he1",
+                      "format": "uri",
+                      "type": "string"
+                    },
+                    "username": {
+                      "description": "Channel username",
+                      "example": "n9he1",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "description": "HTML page containing channel information",
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Successful response with channel information"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "example": "Invalid channel username",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Invalid channel username"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "example": "Channel not found",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Channel not found"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "example": "Rate limit exceeded",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Too many requests"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

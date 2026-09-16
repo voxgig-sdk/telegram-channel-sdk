@@ -1,12 +1,18 @@
 # TelegramChannel SDK feature factory
 
 from telegramchannel_sdk.feature.base_feature import TelegramChannelBaseFeature
+from telegramchannel_sdk.feature.ratelimit_feature import TelegramChannelRatelimitFeature
+from telegramchannel_sdk.feature.retry_feature import TelegramChannelRetryFeature
 from telegramchannel_sdk.feature.test_feature import TelegramChannelTestFeature
+from telegramchannel_sdk.feature.timeout_feature import TelegramChannelTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: TelegramChannelBaseFeature(),
+    "ratelimit": lambda: TelegramChannelRatelimitFeature(),
+    "retry": lambda: TelegramChannelRetryFeature(),
     "test": lambda: TelegramChannelTestFeature(),
+    "timeout": lambda: TelegramChannelTimeoutFeature(),
 }
 
 
