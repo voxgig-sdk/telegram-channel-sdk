@@ -105,12 +105,12 @@ local result, err = client:GetChannelInfo():load({ id = "test01" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/telegram-channel-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/telegram-channel-sdk/releases) |
-| Python | `voxgig-sdk-telegram-channel` | publish pending — [install from git tag](https://github.com/voxgig-sdk/telegram-channel-sdk/releases) |
-| PHP | `voxgig-sdk/telegram-channel` | publish pending — [install from git tag](https://github.com/voxgig-sdk/telegram-channel-sdk/releases) |
+| TypeScript | `@voxgig-sdk/telegram-channel-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/telegram-channel-sdk/tags) |
+| Python | `voxgig-sdk-telegram-channel` | publish pending — [install from git tag](https://github.com/voxgig-sdk/telegram-channel-sdk/tags) |
+| PHP | `voxgig-sdk/telegram-channel` | publish pending — [install from git tag](https://github.com/voxgig-sdk/telegram-channel-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/telegram-channel-sdk/go` | `go get github.com/voxgig-sdk/telegram-channel-sdk/go@latest` |
-| Ruby | `voxgig-sdk-telegram-channel` | publish pending — [install from git tag](https://github.com/voxgig-sdk/telegram-channel-sdk/releases) |
-| Lua | `voxgig-sdk-telegram-channel` | publish pending — [install from git tag](https://github.com/voxgig-sdk/telegram-channel-sdk/releases) |
+| Ruby | `voxgig-sdk-telegram-channel` | publish pending — [install from git tag](https://github.com/voxgig-sdk/telegram-channel-sdk/tags) |
+| Lua | `voxgig-sdk-telegram-channel` | publish pending — [install from git tag](https://github.com/voxgig-sdk/telegram-channel-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/telegram-channel-sdk/go-cli` | `go install github.com/voxgig-sdk/telegram-channel-sdk/go-cli/cmd/telegram-channel@latest` |
 | Go MCP server | `github.com/voxgig-sdk/telegram-channel-sdk/go-mcp` | `go get github.com/voxgig-sdk/telegram-channel-sdk/go-mcp@latest` |
 

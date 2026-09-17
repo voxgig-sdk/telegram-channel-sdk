@@ -127,9 +127,9 @@ class Config {
 
     entity: {
       
-      get_channel_info: {
-      },
-
+        get_channel_info: {
+        },
+  
     }
   }
 
