@@ -91,39 +91,46 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "description",
-						"short": "Channel description",
+						"title": "Description",
 						"type": "`$STRING`",
+						"short": "Channel description",
 					},
 					map[string]any{
 						"name": "id",
+						"title": "Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "image",
-						"short": "URL to the channel profile image",
+						"title": "Image",
 						"type": "`$STRING`",
+						"short": "URL to the channel profile image",
+						"format": "uri",
 					},
 					map[string]any{
 						"name": "subscribers",
-						"short": "Number of channel subscribers",
+						"title": "Subscribers",
 						"type": "`$INTEGER`",
+						"short": "Number of channel subscribers",
 					},
 					map[string]any{
 						"name": "title",
-						"short": "Channel title",
+						"title": "Title",
 						"type": "`$STRING`",
+						"short": "Channel title",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "url",
-						"short": "Full URL to the channel",
+						"title": "Url",
 						"type": "`$STRING`",
+						"short": "Full URL to the channel",
+						"format": "uri",
 					},
 					map[string]any{
 						"name": "username",
-						"short": "Channel username",
+						"title": "Username",
 						"type": "`$STRING`",
+						"short": "Channel username",
 					},
 				},
 				"id": map[string]any{
@@ -137,42 +144,42 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"example": "n9he1",
-											"kind": "param",
-											"name": "id",
-											"orig": "channel_username",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/{channelUsername}",
-								"rename": map[string]any{
-									"param": map[string]any{
-										"channelUsername": "id",
-									},
-								},
 								"segments": []any{
 									map[string]any{
 										"var": "id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"id",
+								"parts": []any{
+									"{id}",
+								},
+								"rename": map[string]any{
+									"param": map[string]any{
+										"channelUsername": "id",
 									},
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"{id}",
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "id",
+											"orig": "channel_username",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+											"example": "n9he1",
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"id",
+									},
 								},
 							},
 						},

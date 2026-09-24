@@ -24,64 +24,137 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "get_channel_info": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "description",
-              "req": false,
-              "short": "Channel description",
-              "type": "`$STRING`"
+          "fields": {
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Channel description",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "image",
-              "req": false,
-              "short": "URL to the channel profile image",
-              "type": "`$STRING`"
+            "image": {
+              "a": true,
+              "fo": "uri",
+              "h": "Image",
+              "n": "image",
+              "r": false,
+              "sh": "URL to the channel profile image",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "subscribers",
-              "req": false,
-              "short": "Number of channel subscribers",
-              "type": "`$INTEGER`"
+            "subscribers": {
+              "a": true,
+              "h": "Subscribers",
+              "n": "subscribers",
+              "r": false,
+              "sh": "Number of channel subscribers",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "title",
-              "req": false,
-              "short": "Channel title",
-              "type": "`$STRING`"
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": false,
+              "sh": "Channel title",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "url",
-              "req": false,
-              "short": "Full URL to the channel",
-              "type": "`$STRING`"
+            "url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Url",
+              "n": "url",
+              "r": false,
+              "sh": "Full URL to the channel",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "username",
-              "req": false,
-              "short": "Channel username",
-              "type": "`$STRING`"
+            "username": {
+              "a": true,
+              "h": "Username",
+              "n": "username",
+              "r": false,
+              "sh": "Channel username",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -93,45 +166,44 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /{channelUsername}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "example": "n9he1",
-                        "kind": "param",
-                        "name": "id",
-                        "orig": "channel_username",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "n9he1",
+                        "k": "param",
+                        "n": "id",
+                        "or": "channel_username",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /{channelUsername}",
-                    "json": "{\"operationId\":\"getChannelInfo\",\"parameters\":[{\"description\":\"The username of the Telegram channel (without @)\",\"in\":\"path\",\"name\":\"channelUsername\",\"required\":true,\"schema\":{\"example\":\"n9he1\",\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"description\":{\"description\":\"Channel description\",\"example\":\"مُجرد زاوية أخرى من عالمي, أدون فيها ما لا يصلح للضجيج 🤍\",\"type\":\"string\"},\"image\":{\"description\":\"URL to the channel profile image\",\"format\":\"uri\",\"type\":\"string\"},\"subscribers\":{\"description\":\"Number of channel subscribers\",\"example\":12177,\"type\":\"integer\"},\"title\":{\"description\":\"Channel title\",\"example\":\"» مُـنذ 25 يَنـايِر \\\"🪐♥„\",\"type\":\"string\"},\"url\":{\"description\":\"Full URL to the channel\",\"example\":\"https://t.me/n9he1\",\"format\":\"uri\",\"type\":\"string\"},\"username\":{\"description\":\"Channel username\",\"example\":\"n9he1\",\"type\":\"string\"}},\"type\":\"object\"}},\"text/html\":{\"schema\":{\"description\":\"HTML page containing channel information\",\"type\":\"string\"}}},\"description\":\"Successful response with channel information\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"example\":\"Invalid channel username\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Invalid channel username\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"example\":\"Channel not found\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Channel not found\"},\"429\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"example\":\"Rate limit exceeded\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Too many requests\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
-                  },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/{channelUsername}",
-                  "rename": {
-                    "param": {
-                      "channelUsername": "id"
-                    }
-                  },
-                  "segments": [
-                    {
-                      "var": "id"
-                    }
-                  ],
-                  "select": {
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/{channelUsername}",
+                  "q": {
                     "exist": [
                       "id"
                     ]
                   },
-                  "transform": {
+                  "r": {
+                    "param": {
+                      "channelUsername": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -560,19 +632,19 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "get_channel_info_ref01",
                 "srcdatavar": "get_channel_info_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {
+              "m": {
                 "id": "get_channel_info01"
               },
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {

@@ -87,39 +87,46 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "description",
-            ["short"] = "Channel description",
+            ["title"] = "Description",
             ["type"] = "`$STRING`",
+            ["short"] = "Channel description",
           },
           {
             ["name"] = "id",
+            ["title"] = "Id",
             ["type"] = "`$STRING`",
           },
           {
-            ["format"] = "uri",
             ["name"] = "image",
-            ["short"] = "URL to the channel profile image",
+            ["title"] = "Image",
             ["type"] = "`$STRING`",
+            ["short"] = "URL to the channel profile image",
+            ["format"] = "uri",
           },
           {
             ["name"] = "subscribers",
-            ["short"] = "Number of channel subscribers",
+            ["title"] = "Subscribers",
             ["type"] = "`$INTEGER`",
+            ["short"] = "Number of channel subscribers",
           },
           {
             ["name"] = "title",
-            ["short"] = "Channel title",
+            ["title"] = "Title",
             ["type"] = "`$STRING`",
+            ["short"] = "Channel title",
           },
           {
-            ["format"] = "uri",
             ["name"] = "url",
-            ["short"] = "Full URL to the channel",
+            ["title"] = "Url",
             ["type"] = "`$STRING`",
+            ["short"] = "Full URL to the channel",
+            ["format"] = "uri",
           },
           {
             ["name"] = "username",
-            ["short"] = "Channel username",
+            ["title"] = "Username",
             ["type"] = "`$STRING`",
+            ["short"] = "Channel username",
           },
         },
         ["id"] = {
@@ -133,42 +140,42 @@ local function make_config()
             ["name"] = "load",
             ["points"] = {
               {
-                ["args"] = {
-                  ["params"] = {
-                    {
-                      ["example"] = "n9he1",
-                      ["kind"] = "param",
-                      ["name"] = "id",
-                      ["orig"] = "channel_username",
-                      ["reqd"] = true,
-                      ["type"] = "`$STRING`",
-                    },
-                  },
-                },
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/{channelUsername}",
-                ["rename"] = {
-                  ["param"] = {
-                    ["channelUsername"] = "id",
-                  },
-                },
                 ["segments"] = {
                   {
                     ["var"] = "id",
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "id",
+                ["parts"] = {
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["channelUsername"] = "id",
                   },
                 },
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["parts"] = {
-                  "{id}",
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "channel_username",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "n9he1",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "id",
+                  },
                 },
               },
             },
