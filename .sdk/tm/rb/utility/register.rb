@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 TelegramChannelUtility.registrar = ->(u) {
   u.clean = TelegramChannelUtilities::Clean
+  u.clean_add = TelegramChannelUtilities::CleanAdd
+  u.clean_explain = TelegramChannelUtilities::CleanExplain
   u.done = TelegramChannelUtilities::Done
   u.make_error = TelegramChannelUtilities::MakeError
   u.feature_add = TelegramChannelUtilities::FeatureAdd

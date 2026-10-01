@@ -79,7 +79,7 @@ main: kit: entity: get_channel_info: {
                 ex: "n9he1"
                 k: "param"
                 n: "id"
-                or: "channel_username"
+                or: "channelUsername"
                 r: true
                 t: "`$STRING`"
               }

@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 TelegramChannelUtility::setRegistrar(function (TelegramChannelUtility $u): void {
     $u->clean = [TelegramChannelClean::class, 'call'];
+    $u->clean_add = [TelegramChannelClean::class, 'add'];
+    $u->clean_explain = [TelegramChannelDone::class, 'clean_explain'];
     $u->done = [TelegramChannelDone::class, 'call'];
     $u->make_error = [TelegramChannelMakeError::class, 'call'];
     $u->feature_add = [TelegramChannelFeatureAdd::class, 'call'];

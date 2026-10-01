@@ -184,7 +184,7 @@ class Config {
                                 "params": [
                                     {
                                         "name": "id",
-                                        "orig": "channel_username",
+                                        "orig": "channelUsername",
                                         "type": "`$STRING`",
                                         "kind": "param",
                                         "reqd": true,

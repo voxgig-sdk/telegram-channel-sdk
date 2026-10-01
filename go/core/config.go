@@ -168,7 +168,7 @@ func MakeConfig() map[string]any {
 									"params": []any{
 										map[string]any{
 											"name": "id",
-											"orig": "channel_username",
+											"orig": "channelUsername",
 											"type": "`$STRING`",
 											"kind": "param",
 											"reqd": true,
