@@ -3,5 +3,17 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Channel description",
+      "Channel title",
+      "Full URL to the channel",
+      "Number of channel subscribers",
+      "Successful response with channel information",
+      "Telegram Server",
+      "This API allows interaction with Telegram channels, enabling users to view channel details, images, and descriptions. It helps manage subscriptions and engage with content in a seamless way.",
+      "URL to the channel profile image"
+    ]
+  }
 }

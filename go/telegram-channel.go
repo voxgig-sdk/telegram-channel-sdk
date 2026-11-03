@@ -13,7 +13,12 @@ type Context = core.Context
 type Utility = core.Utility
 type Feature = core.Feature
 type Entity = core.Entity
-type TelegramChannelEntity = core.TelegramChannelEntity
+type TelegramChannelEntityBase = core.TelegramChannelEntityBase
+
+// Deprecated: use TelegramChannelEntityBase.
+type TelegramChannelEntity = core.TelegramChannelEntityBase
+
+type StreamItem = core.StreamItem
 type FetcherFunc = core.FetcherFunc
 type Spec = core.Spec
 type Result = core.Result
@@ -41,7 +46,7 @@ func init() {
 	core.NewTimeoutFeatureFunc = func() core.Feature {
 		return feature.NewTimeoutFeature()
 	}
-	core.NewGetChannelInfoEntityFunc = func(client *core.TelegramChannelSDK, entopts map[string]any) core.TelegramChannelEntity {
+	core.NewGetChannelInfoEntityFunc = func(client *core.TelegramChannelSDK, entopts map[string]any) core.TelegramChannelEntityBase {
 		return entity.NewGetChannelInfoEntity(client, entopts)
 	}
 }

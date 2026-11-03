@@ -12,5 +12,5 @@ var NewTestFeatureFunc func() Feature
 
 var NewTimeoutFeatureFunc func() Feature
 
-var NewGetChannelInfoEntityFunc func(client *TelegramChannelSDK, entopts map[string]any) TelegramChannelEntity
+var NewGetChannelInfoEntityFunc func(client *TelegramChannelSDK, entopts map[string]any) TelegramChannelEntityBase
 

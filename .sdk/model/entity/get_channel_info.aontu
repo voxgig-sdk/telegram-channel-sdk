@@ -97,6 +97,16 @@ main: kit: entity: get_channel_info: {
               channelUsername: "id"
             }
           }
+          rs: {
+            alternatives: [
+              {
+                kind: "raw"
+                media: "text/html"
+              }
+            ]
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               var: "id"

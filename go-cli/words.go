@@ -75,7 +75,7 @@ func runOp(client *sdk.TelegramChannelSDK, op string, query *eng.Value, entityAt
 
 // entityFor dispatches on the lowercase entity name. The generator
 // emits one `case "<name>":` per entity defined in the SDK model.
-func entityFor(client *sdk.TelegramChannelSDK, name string) (sdk.TelegramChannelEntity, error) {
+func entityFor(client *sdk.TelegramChannelSDK, name string) (sdk.TelegramChannelEntityBase, error) {
 	switch strings.ToLower(name) {
 	case "get_channel_info":
 		return client.GetChannelInfo(nil), nil
